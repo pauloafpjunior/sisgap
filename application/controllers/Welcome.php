@@ -20,6 +20,27 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+
+		// Consultar: https://codeigniter.com/user_guide/general/models.html
+		// Consultar: https://codeigniter.com/user_guide/general/views.html
+
+		$this->load->model('mensagem_model');
+		$dados['titulo'] = 'Minhas Mensagens';
+		$dados['mensagens'] = $this->mensagem_model->obter_todas();
+		$this->load->view('welcome_message', $dados);
+	}
+
+	public function salvar() {
+
+		$this->form_validation->set_rules('email', 'Email', 'required');
+		
+		if ($this->form_validation->run() === FALSE) {
+			$this->index();	
+		} else {
+			// Gravar no banco
+			$this->load->model('mensagem_model');
+			$this->mensagem_model->salvar();
+			$this->index();	
+		}
 	}
 }

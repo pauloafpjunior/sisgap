@@ -35,24 +35,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <!-- Main jumbotron for a primary marketing message or call to action -->
   <div class="jumbotron">
 	<div class="container">
-		<h1>Cadastrar usuário</h1>
+		<h1><?php echo $titulo; ?></h1>
 	</div>
   </div>
 
   <div class="container">
-  <form>
-  <div class="form-group">
-    <label for="exampleFormControlInput1">Email</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="form-group">
-    <label for="exampleFormControlTextarea1">Mensagem</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
-  <button type="button" class="btn btn-primary">Salvar</button>
-</form>
+  <?php echo validation_errors(); ?>
+  <?php echo form_open('welcome/salvar'); ?>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Email</label>
+      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Mensagem</label>
+      <textarea class="form-control" id="mensagem" name="mensagem" rows="3" ></textarea>
+    </div>
+    <button type="submit"  class="btn btn-primary">Salvar</button>
+  </form>
 
-	<hr>
+	<br/>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Email</th>
+      <th scope="col">Mensagem</th>
+    </tr>
+  </thead>
+  <tbody>
+  <?php foreach ($mensagens as $msg):?>
+    <tr>
+      <th scope="row"><?php echo $msg->id; ?></th>
+      <td><?php echo $msg->email; ?></td>
+      <td><?php echo $msg->mensagem; ?></td>
+    </tr>
+  <?php endforeach;?>
+    
+  </tbody>
+</table>
 
   </div> <!-- /container -->
 
