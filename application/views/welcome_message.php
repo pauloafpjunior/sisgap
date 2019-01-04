@@ -345,7 +345,7 @@
                   </p>
               </div>
         </footer>
-        <!--By FaBiUsKcomp-->
+        <!--By FaBiUsKcomp ainda posso melhorar-->
     
         <!-- Bootstrap core JavaScript
         ================================================== -->

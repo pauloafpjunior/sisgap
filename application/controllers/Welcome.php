@@ -111,4 +111,5 @@ class Welcome extends CI_Controller {
             'rules'=>'required|min_length[3]|max_length[255]|trim')
   )
 */
+//Link para a solução
 //https://github.com/marcelod/codeistrap/blob/master/application/config/form_validation.php
