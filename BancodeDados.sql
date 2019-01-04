@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 24/12/2018 às 00:05
+-- Tempo de geração: 04/01/2019 às 00:23
 -- Versão do servidor: 5.7.24-0ubuntu0.18.04.1
 -- Versão do PHP: 7.2.10-0ubuntu0.18.04.1
 
@@ -46,10 +46,10 @@ CREATE TABLE `mensagem` (
   `Graduacao` varchar(20) NOT NULL,
   `PosGraduacao` varchar(30) NOT NULL,
   `AreaposGrad` varchar(50) NOT NULL,
-  `PExpDoc` varchar(10) DEFAULT NULL,
+  `PExpDoc` text,
   `ExpProf` text NOT NULL,
   `ExpEAD` text NOT NULL,
-  `ConhecInfo` varchar(10) NOT NULL,
+  `ConhecInfo` varchar(10) DEFAULT NULL,
   `Curriculo` varchar(30) NOT NULL,
   `AtuaTutor` varchar(5) NOT NULL,
   `OutrasInfo` text
@@ -60,17 +60,19 @@ CREATE TABLE `mensagem` (
 --
 
 INSERT INTO `mensagem` (`Nome`, `Nascimento`, `RG`, `CPF`, `Senha`, `ConfSenha`, `Endereco`, `Bairro`, `Cidade`, `CEP`, `Estado`, `Pais`, `Telefone`, `Celular`, `Email`, `ConfEmail`, `Graduacao`, `PosGraduacao`, `AreaposGrad`, `PExpDoc`, `ExpProf`, `ExpEAD`, `ConhecInfo`, `Curriculo`, `AtuaTutor`, `OutrasInfo`) VALUES
-('', '', 0, 0, '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-('', '', 0, 0, '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-('', '', 0, 0, '', '', '', '', '', 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
-('Fabio Junio', '01/01/1998', 234567, 234567, '21345678', '12345678', '23145678', '21345678', '2134567', 2345678, 'pe', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', '234567', NULL, 'Teste', 'Teste', 'option1', 'sitealeatorio.com.br', 'optio', ''),
-('Fabio Junio', '01/01/1998', 234567, 234567, '21345678', '12345678', '23145678', '21345678', '2134567', 2345678, 'pe', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', '234567', NULL, 'Teste', 'Teste', 'option1', 'sitealeatorio.com.br', 'optio', ''),
-('Rafael Assis', '01/02/1998', 987678908, 2147483647, 'teste', 'teste\'', 'LatifeSimao 12', 'EliasRaimundo', 'Lavras', 35540000, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Area de TI', 'Nao possui', 'option1', 'sitealeatorio.com.br', 'optio', ''),
-('Fabio Junio', '01/01/1998', 234567, 234567, '21345678', '12345678', 'Rua das Goiabas', 'Santa Efigênia', 'Oliveira', 35540000, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Nao tenho nenhuma ainda', 'Nao', 'option1', 'sitealeatorio.com.br', 'optio', ''),
-('Fabio Junio', '01/01/1998', 234567, 234567, '21345678', '12345678', 'Rua das Goiabas', 'Santa Efigênia', 'Oliveira', 35540000, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Nao tenho nenhuma ainda', 'Nao', 'option1', 'sitealeatorio.com.br', 'optio', ''),
-('Marcos Augusto', '01/01/1998', 234567, 234567, '21345678', '12345678', '23145678', '21345678', '2134567', 2345678, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '1', 'Ainda pensando', NULL, 'Todas possiveis', 'To quase lá', 'option1', 'sitealeatorio.com.br', 'optio', NULL),
-('Marcos Augusto', '01/01/1998', 234567, 234567, '21345678', '12345678', '23145678', '21345678', '2134567', 2345678, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '1', 'Ainda pensando', NULL, 'Todas possiveis', 'To quase lá', 'option1', 'sitealeatorio.com.br', 'optio', NULL),
-('Paulo Lima', '01/01/1998', 234567, 234567, '21345678', '12345678', '23145678', '21345678', '2134567', 2345678, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '1', 'Ainda pensando', NULL, 'Todas possiveis', 'To quase lá', 'option1', 'sitealeatorio.com.br', 'optio', NULL);
+('Fabio Junio Rolin de Oliveiira', '01/01/1998', 999999999, 2147483647, 'umasenha', 'umasenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'am', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Teste', 'Teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Fabio Junio Rolin de Oliveiira', '01/01/1998', 999999999, 2147483647, 'Testesenha', 'Testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'go', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Teste', 'Teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Juliano Henrique de Oliveira', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'mt', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Juliano Henrique de Oliveira', '01/01/1998', 999999999, 2147483647, 'senhateste', 'senhateste', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'mt', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Jacinto Leite Aquino Rego', '01/01/1998', 999999999, 2147483647, 'senhaumdois', 'senhaumdois', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ms', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Juliano Henrique de Oliveira', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'am', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'Teste', 'Teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Rafael Hernandez Melo', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ba', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Juliano Henrique de Oliveira', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'mg', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Juliano Henrique de Oliveira', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ba', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Marcos Pereira Antonio', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ba', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Erivelton Marcelo do Rego', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ba', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Jacinto Leite Aquino Rego', '01/01/1998', 999999999, 2147483647, 'testesenha', 'testesenha', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ms', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL),
+('Marcos Aurélio Matias', '01/01/1998', 999999999, 2147483647, 'testeteste', 'testeteste', 'Rua das Goiabas', 'Elias Raimundo', 'Oliveira', 35540000, 'ms', 'Brasil', '99999999999', '99999999999', 'fabio@teste.com.br', 'fabio@teste.com.br', 'Computação', '0', 'Nenhuma', NULL, 'teste', 'teste', 'option3', 'sitealeatorio.com.br', 'optio', NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
