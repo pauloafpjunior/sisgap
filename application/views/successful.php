@@ -33,18 +33,23 @@
             </form>
           </div>
         </nav>
-    
+        <br /><br /><br />
         <main role="main">
     
           <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron">
+        <!--<div class="jumbotron">
             <div class="container">
               <div class="well well-large">
                   <center><img src="http://sisgap.dired.ufla.br/assets/img/logo.png"/></center>
               </div> 
             </div>
+        </div>-->
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Cadastro Realizado com sucesso !</h4>
+            <p>Concluído, suas informações foram salvas e serão armazenadas com segurança para que haja nenhuma violação.</p>
+            <hr>
+            <p class="mb-0">Agora para logar, basta entrar com seu usuário e sua senha na pagina inicial.</p>
         </div>
-        <center><button type="button" class="btn btn-success">Seu cadastro foi realizado com sucesso!</button></center>
         <br /><br />
         <center><a href="" class="badge badge-primary">Voltar para página inicial</a></center>
         <br><br />

@@ -2,19 +2,21 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-	
-	public function index()
-	{
-		/*$this->load->model('Mensagem_model');
-		$this->load->view('welcome_message.php');
-		$this->load->helper('url');
-		$this->load->helper('form');*/
 
-		//Aqui estão as inicializações dos metodos iniciais
+	public function __construct(){
+		parent::__construct();
+
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
+	}
+	
+	public function index()
+	{
+		$this->load->view('welcome_message');
+	}
 
+	public function redireciona(){
 		//Aqui estão as validações dos formularios
 		$this->form_validation->set_rules ('Nome', 'Nome Completo','trim|required|min_length[10]|max_length[40]','valid_username'
 		, array('required' => 'Você não forneceu um Nome!'));
@@ -27,13 +29,13 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules ('Bairro', 'Bairro', 'required', array('required' => 'Bairro não atribuído!'));
 		$this->form_validation->set_rules ('Cidade', 'Cidade', 'required', array('required' => 'Cidade não atribuída!'));
 		$this->form_validation->set_rules ('CEP', 'CEP', 'required', array('required' => 'CEP não atribuído!'));
-		$this->form_validation->set_rules ('Estado', 'Estado', 'required', array('required' => 'Estado não atribuído!'));
+		$this->form_validation->set_rules ('Estado', 'Estado', 'required', array('required' => 'O campo estado é obrigatório!'));
 		$this->form_validation->set_rules ('Pais', 'País', 'required', array('required' => 'País não atribuído!'));
-		$this->form_validation->set_rules ('Telefone', 'Telefone', 'required|min_length[10]|max_length[14]', array('required' => 'Data não atribuída!'));
-		$this->form_validation->set_rules ('Celular', 'Celular', 'required|required|min_length[10]|max_length[14]', array('required' => 'Celular não atribuído!'));
+		$this->form_validation->set_rules ('Telefone', 'Telefone', 'required|min_length[10]|max_length[14]', array('required' => 'O campo Telefone é obrigatório!'));
+		$this->form_validation->set_rules ('Celular', 'Celular', 'required|required|min_length[10]|max_length[14]', array('required' => 'O campo Celular é obrigatório!'));
 		$this->form_validation->set_rules ('Email', 'E-mail','trim|required|valid_email', array('valid_email' => 'Email inválido!'));
 		$this->form_validation->set_rules ('ConfEmail', 'Confirme seu E-mail', 'trim|required|matches[Email]');
-		$this->form_validation->set_rules ('Graduacao', 'Graduação', 'required', array('required' => 'Graduação não atribuída!'));
+		$this->form_validation->set_rules ('Graduacao', 'Graduação', 'required', array('required' => 'O campo Graduação é obrigatório!'));
 		$this->form_validation->set_rules ('PosGraduacao', 'Pós-Graduação', 'required');
 		$this->form_validation->set_rules ('AreaposGrad', 'Área Pós-Graduação', 'required');
 	    $this->form_validation->set_rules ('PExDoc', 'Possui experiência em docência?', 'required');
@@ -43,14 +45,12 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules ('Curriculo', 'Currículo Lattes', 'required', 'valid_link');
 		$this->form_validation->set_rules ('AtuaTutor', 'Já atuou ou atua como tutor na UFLA?', 'required');
 
-		//Aqui estao codições atentendendo as validações
+		//Delimitadores de Erros
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+		
 		if($this->form_validation->run() == FALSE) 
         {
-			//Se o formulario nao for preenchido ele da um erro
 			$erros = array('erro' => validation_errors()); 
-			//Aqui eu nao sei como faz para a mensagem de erro aparecer na mesma tela sem que
-			//os dados somem da tela
-			//Mais estou procurando, quando eu achar eu vou concertar
 			$this->load->view('welcome_message', $erros); 
         } 
         else 
@@ -84,19 +84,16 @@ class Welcome extends CI_Controller {
 				'AtuaTutor' => $this->input->post('AtuaTutor'),
 				'OutrasInfo' => $this->input->post('OutasInfo'),
 			];
-			//Chamada do metodo salvar passando o dados por parametro
+			
 			$this->cadastrar($dados);
-			//Tela de sucesso exibida apos o salvamento dos dados
             $this->load->view('successful'); 
-        } 
+        }
 	}
 
 	public function cadastrar($dados)
 	{
-		//Chamada do banco e salvação dos dados no Banco
 		$this->load->model('mensagem_model');
-		$this->mensagem_model->salvar($dados);
-		//$this->index();	
+		$this->mensagem_model->salvar($dados);	
 	}
 }
 
