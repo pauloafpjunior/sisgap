@@ -52,3 +52,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+$route['formulario'] = 'welcome/formulario';
+
+//Note que se seu servidor nao estiver reconhecendo as rotas, você deve dar permissão amigavel para o acesso
+//Aqui tem um link de como arrumar no ubunto : https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04
+/* cole isso no arquivo criado :
+
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php/$1 [L]
+    </IfModule>
+
+    note que o arquivo .htaccess deve ser criado na raiz da pasta do projeto var/www/html/sisgap/
+*/
+
+

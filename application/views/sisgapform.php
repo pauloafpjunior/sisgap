@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -237,9 +237,6 @@
                     <p><strong>Experiência(s) Profissional</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Escreva aqui</span>
-                            </div>
                             <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpProf') ?>" name="ExpProf"></textarea>
                         </div>
                         <?php echo form_error('ExpProf') ?>
@@ -247,9 +244,6 @@
                     <p><strong>Experiência(s) Profissional na área de EAD</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Escreva aqui</span>
-                            </div>
                             <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpEAD') ?>" name="ExpEAD"></textarea>
                         </div>
                         <?php echo form_error('ExpEAD') ?>
@@ -287,9 +281,6 @@
                     <p><strong>Outras informações de Cadastro/Currículo</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text">Escreva aqui</span>
-                            </div>
                             <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('OutrasInfo') ?>" name="OutrasInfo"></textarea>
                         </div>
                         <small><p class="font-italic">Alguma informação adicional que queira levantar</p></small>
@@ -305,7 +296,37 @@
             </form>
         </div>
         <br><br />
-        <div class="jumbotron">
+        <div class="container p-3 mb-2 bg-light text-dark">
+            <div class="">
+                <div class="text-center">
+                    <img src="<?php echo('assets/img/LogoFooter.png.png') ?>" class="img-fluid" alt="Responsive image">
+                </div> 
+            </div>
+        </div>
+        <br />
+        <footer class="container shadow-lg p-3 mb-5 bg-white rounded">
+            <div class="footer p-3 mb-2 bg-dark text-white">
+                <center>
+                    <div id="footbar">
+                        <div width="100%" align="center">
+                          <br />
+                            <p align="center" class="text">
+                            <strong>Diretoria de Educação a Distância - DIRED</strong><br>
+                            <i>Campus Histórico da UFLA - Lavras/MG - 37.200-000</i><br>
+                            <strong>Telefone</strong>: (35) 3829-1035<br>					
+                            <strong>Email</strong>: editais@dired.ufla.br
+                            </p>
+                        </div>
+                    </div>
+                </center>
+                <p align="center">
+                    Copyright © 2019 - <a href='http://www.dired.ufla.br' target="_blank"><span class="badge badge-dark">DIRED</span></a> - Diretoria de Educação a 
+                    Distância
+                <br><br>
+                </p>
+            </div>
+        </footer>
+        <!--<div class="jumbotron">
             <div class="container">
                 <div class="text-center">
                     <img src="http://sisgap.dired.ufla.br/assets/img/logo.png" class="img-fluid" alt="Responsive image">
@@ -332,7 +353,7 @@
                         <br><br>
                 </p>
             </div>
-        </footer>
+        </footer>-->
     <!--by FaBiUsKcomp-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

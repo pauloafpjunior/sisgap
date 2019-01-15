@@ -51,7 +51,7 @@
             <p class="mb-0">Agora para logar, basta entrar com seu usuário e sua senha na pagina inicial.</p>
         </div>
         <br /><br />
-        <center><a href="" class="badge badge-primary">Voltar para página inicial</a></center>
+        <center><a href="<?php echo base_url('index') ?>" class="badge badge-primary">Voltar para página inicial</a></center>
         <br><br />
             <div class="jumbotron">
                 <div class="container">

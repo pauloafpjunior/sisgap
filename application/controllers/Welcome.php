@@ -13,7 +13,12 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('sisgapbegin.php');
+	}
+
+	public function formulario()
+	{
+		$this->load->view('sisgapform.php');
 	}
 
 	public function redireciona(){
@@ -51,7 +56,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == FALSE) 
         {
 			$erros = array('erro' => validation_errors()); 
-			$this->load->view('welcome_message', $erros); 
+			$this->load->view('sisgapform', $erros); 
         } 
         else 
         {
@@ -86,7 +91,7 @@ class Welcome extends CI_Controller {
 			];
 			
 			$this->cadastrar($dados);
-            $this->load->view('successful'); 
+            $this->load->view('sisgapsavesucess.php'); 
         }
 	}
 
