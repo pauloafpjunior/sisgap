@@ -45,11 +45,12 @@
               </div> 
             </div>
         </div>-->
-        <div class="alert alert-success" role="alert">
-          <h4 class="alert-heading">Cadastro Realizado com sucesso !</h4>
-            <p>Concluído, suas informações foram salvas e serão armazenadas com segurança para que haja nenhuma violação.</p>
-            <hr>
-            <p class="mb-0">Agora para logar, basta entrar com seu usuário e sua senha na pagina inicial.</p>
+        <div class="jumbotron p-3 mb-2 bg-success text-white">
+            <h1 class="display-4">Bem Vindo</h1>
+            <p class="lead">Login Feito com sucesso, teste feito com sucesso</p>
+            <hr class="my-4">
+            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla....</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Ler Mais</a>
         </div>
         <br /><br />
         <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-primary">Voltar para página inicial</a></center>

@@ -13,6 +13,15 @@ class Mensagem_model extends CI_Model {
         return $this->db->insert('mensagem', $dados);
     }
 
+    public function loginVerifica($CPF, $Senha){
+
+        $this->db->where('CPF', $CPF);
+        $this->db->where('Senha', $Senha);
+        $query = $this->db->get('mensagem');
+
+        return ($query->num_rows() == 1) ? true : false;
+    }
+
     // Consultar: https://codeigniter.com/user_guide/database/query_builder.html
     // Consultar: https://codeigniter.com/user_guide/tutorial/create_news_items.html
 }

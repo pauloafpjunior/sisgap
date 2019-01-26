@@ -13,21 +13,59 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('sisgapbegin.php');
+		//$this->load->view('sisgapBeginDarkcolors.php');
+		$this->load->view('Front-end/sisgapBeginBluecolors.php');
+	}
+
+	public function inicio()
+	{
+		//$this->load->view('sisgapBeginDarkcolors.php');
+		$this->load->view('Front-end/sisgapBeginBluecolors.php');
+	}
+
+	public function login()
+	{
+		//Aqui será implementada a função de login no sistema.
+		$this->form_validation->set_rules ('CPF', 'CPF', 'required','max_length[9]|trim|xss_clean', array('required' => 'CPF não atribuído ou inválido!'));
+		$this->form_validation->set_rules ('Senha', 'Senha', 'trim|required|min_length[6]');
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+
+		if($this->form_validation->run() == FALSE) 
+        {
+			$erros = array('erro' => validation_errors()); 
+			$this->load->view('Front-end/sisgapBeginBluecolors', $erros); 
+        } else {
+
+			$CPF = $this->input->post('CPF');
+			$Senha = md5($this->input->post('Senha'));
+
+			$this->load->model('mensagem_model');
+			if($this->mensagem_model->loginVerifica($CPF, $Senha)){
+				//Aqui irei carregar a tela de Sucesso
+				$this->load->view('Front-end/sisgapSuccessLogin.php');
+			} else {
+				//Aqui irei permanecer na pagina e emitir o erro
+				//echo 'Deu Errado';
+				//$this->load->view('sisgapbegin');
+				$this->session->set_flashdata('error', 'Usuário não Cadastrado!');
+				redirect('inicio');
+			}
+		}
 	}
 
 	public function formulario()
 	{
+		//$this->load->view('sisgapform.php');
 		$this->load->view('sisgapform.php');
 	}
 
-	public function redireciona(){
+	public function form_validate(){
 		//Aqui estão as validações dos formularios
 		$this->form_validation->set_rules ('Nome', 'Nome Completo','trim|required|min_length[10]|max_length[40]','valid_username'
 		, array('required' => 'Você não forneceu um Nome!'));
 		$this->form_validation->set_rules ('Nascimento', 'Data de Nascimento', 'required|trim', array('required' => 'Data não atribuída!'));
 		$this->form_validation->set_rules ('RG', 'RG', 'required','min_length[10]','max_length[11]|trim|xss_clean',array('required' => 'RG não atribuído!'));
-		$this->form_validation->set_rules ('CPF', 'CPF', 'required','max_length[9]|trim|xss_clean', array('required' => 'RG não atribuído!'));
+		$this->form_validation->set_rules ('CPF', 'CPF', 'required','max_length[9]|trim|xss_clean', array('required' => 'CPF não atribuído ou inválido!'));
 		$this->form_validation->set_rules ('Senha', 'Senha', 'trim|required|min_length[6]');
 		$this->form_validation->set_rules ('ConfSenha', 'Confirmar senha','trim|required|matches[Senha]', array('matches' => 'Senhas diferentes!'));
 		$this->form_validation->set_rules ('Endereco', 'Endereço', 'required', array('required' => 'Endereço não atribuída!'));
@@ -56,7 +94,7 @@ class Welcome extends CI_Controller {
 		if($this->form_validation->run() == FALSE) 
         {
 			$erros = array('erro' => validation_errors()); 
-			$this->load->view('sisgapform', $erros); 
+			$this->load->view('Front-end/sisgapBeginBluecolors', $erros); 
         } 
         else 
         {
@@ -66,8 +104,8 @@ class Welcome extends CI_Controller {
 				'Nascimento' => $this->input->post('Nascimento'),
 				'RG' => $this->input->post('RG'),
 				'CPF' => $this->input->post('CPF'),
-				'Senha' => $this->input->post('Senha'),
-				'ConfSenha' => $this->input->post('ConfSenha'),
+				'Senha' => md5($this->input->post('Senha')),
+				'ConfSenha' => md5($this->input->post('ConfSenha')),
 				'Endereco' => $this->input->post('Endereco'),
 				'Bairro' => $this->input->post('Bairro'),
 				'Cidade' => $this->input->post('Cidade'),

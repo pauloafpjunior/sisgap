@@ -11,7 +11,7 @@
     <title>Sistema de Gestão Administrativa e Pedagógica - SisGAP</title>
   </head>
   <body class="p-3 mb-2 bg-light text-dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
             <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                             <span class="input-group-text" id="basic-addon1">*</span>
                         </div>
                         <input type="password" class="form-control" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1" name="">
-                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="submit" class="btn btn-success">Entrar</button>
                     </div>
                 </form>
             </div>
@@ -49,14 +49,14 @@
             </div>
         </div>-->
         <br /><br /><br />
-        <center><h1><span class="badge badge-dark">Formulário para cadastro de novos usuários</span></h1><br /></center>
+        <center><h1><span class="badge badge-primary border border-success">Formulário para cadastro de novos usuários</span></h1><br /></center>
         <br />
         <?php //echo validation_errors(); ?>
         <?php echo form_open('Welcome/form_validate'); ?>
-        <div class="container">
+        <div class="container border border-success">
             <form action="http://localhost/sisgap/index.php/Welcome" method="post" accept-charset="utf-8">
                 <form method="post">
-                    <h2>Dados <span class="badge badge-dark"> Pessoais</span></h2><br />
+                    <h2>Dados <span class="badge badge-primary"> Pessoais</span></h2><br />
                     <div class="form-row">
                         <div class="form-group col-md-9">
                             <label for="inputEmail4"><strong>Nome Completo</strong></label>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <br />
-                    <h2>Dados <span class="badge badge-dark"> de Contato</span></h2><br />
+                    <h2>Dados <span class="badge badge-primary"> de Contato</span></h2><br />
                     <div class="form-row">
                         <div class="form-group col-md-7">
                             <label for="inputEmail4"><strong>Endereço</strong></label>
@@ -192,7 +192,7 @@
                             <?php echo form_error('ConfEmail') ?>
                         </div>
                     </div><br />
-                    <h2>Atuação <span class="badge badge-dark">Profissional</span></h2><br />
+                    <h2>Atuação <span class="badge badge-primary">Profissional</span></h2><br />
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4"><strong>Graduação</strong></label>
@@ -249,7 +249,7 @@
                         </div>
                         <?php echo form_error('ExpEAD') ?>
                     </div><br />
-                    <h2>Experiência <span class="badge badge-dark">com Informática</span></h2><br />
+                    <h2>Experiência <span class="badge badge-primary">com Informática</span></h2><br />
                     <p><strong>Nível de Conhecimento em informática</strong></p>
                     <div class="form-group col-md-13">
                         <select id="inputState" class="form-control form-control-sm" value="<?php echo set_value('ConhecInfo') ?>" name="ConhecInfo">
@@ -268,7 +268,7 @@
                         </div>
                     </div>
                     <?php echo form_error('Curriculo') ?>
-                    <h2>Atuação <span class="badge badge-dark">como tutor na UFLA</span></h2><br />
+                    <h2>Atuação <span class="badge badge-primary">como tutor na UFLA</span></h2><br />
                     <p><strong>Já atuou ou atua como tutor na UFLA?</strong></p>
                     <div class="form-group col-md-13">
                         <select id="inputState" class="form-control form-control-sm" value="<?php echo set_value('AtuaTutor') ?>" name="AtuaTutor">
@@ -278,7 +278,7 @@
                         </select>
                     </div>
                     <?php echo form_error('AtuaTutor') ?>
-                    <h2>Informações <span class="badge badge-dark">Adicionais</span></h2><br />
+                    <h2>Informações <span class="badge badge-primary">Adicionais</span></h2><br />
                     <p><strong>Outras informações de Cadastro/Currículo</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
@@ -290,7 +290,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <button class="btn btn-primary btn-lg btn-block" type="submit">Confirmar Cadastro</button>
-                            <a class="btn btn-secondary btn-lg btn-block text-white bg-dark" href="" role="button">Cancelar Cadastro</a>
+                            <a class="btn btn-secondary btn-lg btn-block text-white bg-success" href="" role="button">Cancelar Cadastro</a>
                         </div>
                     </div>
                 </form>
@@ -306,7 +306,7 @@
         </div>
         <br />
         <footer class="container shadow-lg p-3 mb-5 bg-white rounded">
-            <div class="footer p-3 mb-2 bg-dark text-white">
+            <div class="footer p-3 mb-2 bg-primary text-white">
                 <center>
                     <div id="footbar">
                         <div width="100%" align="center">
