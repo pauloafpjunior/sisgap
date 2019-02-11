@@ -13,7 +13,7 @@ Como instalar o repositório na minha casa:
 - Colar o endereço: https://github.com/pauloafpjunior/sisgap.git
 - Escolher a pasta 'www' do diretório de instalação do WampServer
 
-- Olá Paulo, terminei a tarefa 23/12
-- Fiz toda a parte de inserção no banco de dados, e tambem deixei o formulario como estava, porém, juntos em uma mesma página
-- Por favor, faça uma verificação no que fiz e vê se preciso mudar algo.
-- O banco de Dados com os campos do registro chama-se BancodeDados.
+- Segue abaixo alguns links de como habilitar as rotas no Apache:
+- https://www.vivaolinux.com.br/dica/Ativando-modo-de-reescrita-de-URL-mod-rewrite-no-Apache
+- http://www.rafaelwendel.com/2011/08/como-usar-url-amigaveis-no-servidor-apache/
+- https://www.dirceuresende.com/blog/implementando-url-amigavel-no-apache-com-htaccess-e-php/

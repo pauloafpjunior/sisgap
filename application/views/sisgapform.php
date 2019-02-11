@@ -51,6 +51,7 @@
         <br /><br /><br />
         <center><h1><span class="badge badge-dark">Formulário para cadastro de novos usuários</span></h1><br /></center>
         <br />
+        <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("DadosIguais") ?></small></h4>
         <?php //echo validation_errors(); ?>
         <?php echo form_open('Welcome/form_validate'); ?>
         <div class="container">
@@ -75,13 +76,14 @@
                             <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="123.456.789-00" value="<?php echo set_value('CPF') ?>" name="CPF">
                             <small><p class="font-italic">Digite um CPF válido</p></small>
                             <?php echo form_error('CPF') ?>
+                            <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("CPFIguais") ?></small></h4>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4"><strong>RG</strong></label>
                             <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="XX - 99.999.999" value="<?php echo set_value('RG') ?>" name="RG">
                             <small><p class="font-italic">Digite um Registro válido</p></small>
                             <?php echo form_error('RG') ?>
-
+                            <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("RGIguais") ?></small></h4>
                         </div>
                     </div>
                     <div class="form-row">

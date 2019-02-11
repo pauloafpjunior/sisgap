@@ -5,6 +5,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -12,8 +13,7 @@
     <title>Sistema de Gestão Administrativa e Pedagógica - SisGAP</title>
   </head>
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="" >SisGap</a>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-p-3 mb-2 bg-primary text-white">
           <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -24,37 +24,16 @@
                 <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO <span class="sr-only">(current)</span></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">CONTATOS</a>
+                <a class="nav-link text-white" href="">CONTATOS</a>
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
-              <input class="form-control mr-sm-2" type="text" placeholder="senha" aria-label="Login">
-              <button class="btn btn-primary" type="submit">Entrar</button>
-            </form>
           </div>
+          <a href="<?php echo base_url('inicio') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px"></button></a>
         </nav>
-        <br /><br /><br />
-        <main role="main">
-    
-          <!-- Main jumbotron for a primary marketing message or call to action -->
-        <!--<div class="jumbotron">
-            <div class="container">
-              <div class="well well-large">
-                  <center><img src="http://sisgap.dired.ufla.br/assets/img/logo.png"/></center>
-              </div> 
-            </div>
-        </div>-->
-        <div class="jumbotron p-3 mb-2 bg-success text-white">
-            <h1 class="display-4">Bem Vindo</h1>
-            <p class="lead">Login Feito com sucesso, teste feito com sucesso</p>
-            <hr class="my-4">
-            <p>bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla....</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Ler Mais</a>
-        </div>
         <br /><br />
-        <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-primary">Voltar para página inicial</a></center>
-        <br><br />
+        <div class="p-3 mb-2 bg-success text-white row"></div>
+        <br /><br />
+        <div class="container shadow-lg p-3 mb-2 bg-light p-3 mb-2 bg-light">
             <div class="jumbotron">
                 <div class="container">
                     <div class="well well-large">
@@ -62,8 +41,59 @@
                     </div> 
                 </div>
             </div>
+          </div>
+        <main role="main">
+        <br /><br /><br />
+        <div class="container text-center">
+        <?php echo form_open('Welcome/update'); ?>
+        <form class="container">
+        <h1 class="text-danger">Aqui coloquei só alguns exemplos para testes...</A></h1><br />
+        <div class="form-group">
+            <label for="exampleInputEmail1">CPF</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="CPF" name="CPF" value="<?php echo set_value('CPF') ?>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">RG</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Novo Endereço" name="Endereco" value="<?php echo set_value('RG') ?>">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Endereço</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Novo Endereço" name="Endereco" value="<?php echo set_value('Endereco') ?>">
+          </div>
+          <?php echo form_error('Endereco') ?>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Telefone</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Novo Telefone" name="Telefone" value="<?php echo set_value('Telefone') ?>">
+          </div>
+          <?php echo form_error('Telefone') ?>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Senha</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nova Senha" name="Senha">
+          </div>
+          <?php echo form_error('Senha') ?>
+          <h4><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h4>
+          <button class="btn btn-success btn-lg btn-block" type="submit">Alterar Dados</button>
+        </form>
+        </div>
+        <br />  
+        <br />                                 
+        </div>
+        <div class="container"><center><a href="<?php echo base_url('inicio') ?>" class="btn btn-primary btn-lg btn-block">Voltar para página inicial</a></center></div>
+        <br><br />
         </main>
-    
+        <div class="card container p-3 mb-2 bg-light text-dark shadow-lg p-3 mb-5 bg-white rounded border border-success">
+          <div class="card-header p-3 mb-2 bg-primary text-white">
+          <img src="<?php echo base_url('assets/img/icone-frase.png') ?>" width="25px">
+            Frase do Dia :
+          </div>
+          <div class="card-body">
+              <blockquote class="blockquote mb-0">
+              <p class="font-italic">“Quem conhece a sua ignorância revela a mais profunda sapiência. Quem ignora a sua ignorância vive na mais profunda ilusão.”
+                </p>
+              <footer class="blockquote-footer"><cite title="Source Title">Lao - Tsé</cite></footer>
+            </blockquote>
+          </div>
+        </div>
         <footer class="container">
             <div class="footer">
                 <center>

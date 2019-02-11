@@ -19,13 +19,17 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO<span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">CONTATOS</a>
+                    <li class="nav-item text-white">
+                        <a class="nav-link text-white" href="">CONTATOS</a>
                     </li>
                 </ul>
             </div>
+            <button class="btn btn-default bg-primary text-white">
+                <a href="<?php echo base_url('inicio') ?>" class="text-white"><strong>Acesso Administrativo</strong></a>
+                <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/icone-admaccess.png') ?>" width="30px"></a>
+            </button> 
         </nav>
         <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
         <div class="container">
@@ -48,41 +52,44 @@
                 <div class="col-4">
                   <br /><br />
                     <div class="" style="max-width: 18rem;">
-                        <div class="card-header font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded "><strong>Já possui Cadastro?</strong>
-                            <div class="card-body p-3 mb-2 bg-light text-dark border border-success">
-                              <center><a class="text-success" href=""><strong>Acesso Administrativo</strong></a></center>
-                            </div>
-                        </div>
                         <div class="card-header font-italic border border-success shadow-lg p-3 mb-5 bg-primary rounded">
                         <?php echo form_open('Welcome/login'); ?>
                             <form>
+                            <p class="text-write"><strong>Já possui cadastro?</strong></p>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1"><p class="text-write"><strong>Seu CPF</strong></p></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="000.000.000-00" name="CPF" value="<?php echo set_value('CPF') ?>">
-                                    <small id="emailHelp" class="font-italic text-write">CPF válido e que esteja cadastrado no sistema</small><br />
+                                    <label for="exampleInputEmail1"><p class="text-write"><img src="<?php echo base_url('assets/img/icone-cpf.png') ?>" width="30px"><strong>Seu CPF</strong></p></label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="00000000000" name="CPF" value="<?php echo set_value('CPF') ?>">
+                                    <small id="emailHelp" class="font-italic text-write">CPF sem pontos ou traços</small><br />
                                     <?php echo form_error('CPF') ?>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputPassword1"><p class="text-primary"><strong>Senha</strong></p></label>
+                                    <label for="exampleInputPassword1"><p class="text-white"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"><strong>Senha</strong></p></label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="Senha">
                                     <?php echo form_error('Senha') ?>
                                     <h4><small class="text-danger"><?php echo $this->session->flashdata("error") ?></small></h4>
                                 </div>
-                                <center><button type="submit" class="btn btn-success">Entrar</button></center>
+                                <div class="p-3 mb-2 bg-success text-white">
+                                  <center><button type="submit" class="btn btn-success"><strong>Entrar</strong> <img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button></center>
+                                </div>
                             </form>
                             <br />
-                            <div class="card-body p-3 mb-2 bg-light text-dark border border-success">
-                              <center><a class="text-success" href=""><strong>Esqueci minha senha</strong></a></center>
+                            <div class="p-3 mb-2 bg-success text-white">
+                              <center><a class="text-white" href=""><strong>Esqueci minha senha<img src="<?php echo base_url('assets/img/icone-esquecisenha.png') ?>" width="25px"></strong></a></center>
                             </div>
                         </div>
                     </div>
                     <div class="" style="max-width: 18rem;">
                         <div class="card-header font-italic border border-success shadow-lg p-3 mb-5 bg-primary rounded">
                             <p class="text-write"><strong>Não possui cadastro ainda?</strong></p>
-                            <div class="card-body p-3 mb-2 bg-light text-dark border border-success">
-                                <center><a class="text-success" href="<?php echo base_url('formulario') ?>"><strong>Quero me cadastrar</strong></a></center>
+                            <div class="p-3 mb-2 bg-success text-white">
+                                <center><a class="text-white" href="<?php echo base_url('formulario') ?>"><strong>Quero me cadastrar <img src="<?php echo base_url('assets/img/icone-cadastro.png') ?>" width="25px"></strong></a></center>
                             </div>
                         </div>
+                        <!--<div class="card-header font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded "><strong>Já possui Cadastro?</strong>
+                            <div class="card-body p-3 mb-2 bg-light text-dark border border-success">
+                              <center><a class="text-success" href=""><strong>Acesso Administrativo</strong></a></center>
+                            </div>
+                        </div>-->
                     </div> 
                 </div>
                 <div class="col-8">
@@ -94,7 +101,7 @@
                         </div>
                     </div>-->
                     <div class="col-12 text-center my-5">
-                      <h3 class="font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded">Mini tutorial do processo</h3>
+                      <h3 class="font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded"> <img src="<?php echo base_url('assets/img/icone-tutorial.png') ?>" width="40px">Mini tutorial do processo </h3>
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                         <ol class="carousel-indicators">
@@ -107,13 +114,13 @@
                             <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado1.jpeg') ?>" alt="First slide">
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado1.jpeg') ?>" alt="Second slide">
+                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado2.jpeg') ?>" alt="Second slide">
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado1.jpeg') ?>" alt="Third slide">
+                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado3.jpeg') ?>" alt="Third slide">
                           </div>
                           <div class="carousel-item">
-                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado1.jpeg') ?>" alt="Third slide">
+                            <img class="d-block w-100" src="<?php echo base_url('assets/img/ajudaEstado4.jpeg') ?>" alt="Third slide">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -215,7 +222,8 @@
         <br /><br />
         <div class="card container p-3 mb-2 bg-light text-dark shadow-lg p-3 mb-5 bg-white rounded border border-success">
           <div class="card-header p-3 mb-2 bg-primary text-white">
-            Frase do Dia:
+          <img src="<?php echo base_url('assets/img/icone-frase.png') ?>" width="25px">
+            Frase do Dia :
           </div>
           <div class="card-body">
               <blockquote class="blockquote mb-0">
@@ -236,8 +244,8 @@
                             <p align="center" class="text">
                             <strong>Diretoria de Educação a Distância - DIRED</strong><br>
                             <i>Campus Histórico da UFLA - Lavras/MG - 37.200-000</i><br>
-                            <strong>Telefone</strong>: (35) 3829-1035<br>					
-                            <strong>Email</strong>: editais@dired.ufla.br
+                            <img src="<?php echo base_url('assets/img/icone-telefone.png') ?>" width="25px"><strong>Telefone</strong>: (35) 3829-1035 <br>					
+                            <img src="<?php echo base_url('assets/img/icone-email.png') ?>" width="25px"><strong>Email</strong>: editais@dired.ufla.br
                             </p>
                         </div>
                     </div>

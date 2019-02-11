@@ -12,8 +12,7 @@
     <title>Sistema de Gestão Administrativa e Pedagógica - SisGAP</title>
   </head>
   <body>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="" >SisGap</a>
+      <nav class="navbar navbar-expand-md navbar-primary fixed-top bg-primary text-white">
           <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,7 +29,7 @@
             <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Login">
               <input class="form-control mr-sm-2" type="text" placeholder="senha" aria-label="Login">
-              <button class="btn btn-primary" type="submit">Entrar</button>
+              <button class="btn btn-success" type="submit">Entrar</button>
             </form>
           </div>
         </nav>
@@ -45,14 +44,14 @@
               </div> 
             </div>
         </div>-->
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-danger" role="alert">
           <h4 class="alert-heading">Cadastro Realizado com sucesso !</h4>
             <p>Concluído, suas informações foram salvas e serão armazenadas com segurança para que haja nenhuma violação.</p>
             <hr>
             <p class="mb-0">Agora para logar, basta entrar com seu usuário e sua senha na pagina inicial.</p>
         </div>
         <br /><br />
-        <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-primary">Voltar para página inicial</a></center>
+        <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-success">Voltar para página inicial</a></center>
         <br><br />
             <div class="jumbotron">
                 <div class="container">
