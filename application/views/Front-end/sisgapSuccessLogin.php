@@ -53,10 +53,6 @@
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="CPF" name="CPF" value="<?php echo set_value('CPF') ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">RG</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Novo Endereço" name="Endereco" value="<?php echo set_value('RG') ?>">
-          </div>
-          <div class="form-group">
             <label for="exampleInputEmail1">Endereço</label>
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Novo Endereço" name="Endereco" value="<?php echo set_value('Endereco') ?>">
           </div>
