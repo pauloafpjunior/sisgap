@@ -49,11 +49,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'Controllerone';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['inicio'] = 'welcome/inicio';
-$route['formulario'] = 'welcome/formulario';
+$route['inicio'] = 'Controllerone/inicio';
+$route['formulario'] = 'Controllerone/formulario';
+$route['login'] = 'Controllerone/login';
+$route['validation'] = 'Controllerone/form_validate';
+$route['logged'] = 'Controllerone/logged';
+$route['change'] = 'Controllerone/change';
+$route['update'] = 'Controllerone/update';
+$route['quit'] = 'Controllerone/Quit';
 
 //Note que se seu servidor nao estiver reconhecendo as rotas, você deve dar permissão amigavel para o acesso
 //Aqui tem um link de como arrumar no ubunto : https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04

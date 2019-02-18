@@ -44,7 +44,7 @@
               </div> 
             </div>
         </div>-->
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-success container" role="alert">
           <h4 class="alert-heading">Cadastro Realizado com sucesso !</h4>
             <p>Concluído, suas informações foram salvas e serão armazenadas com segurança para que haja nenhuma violação.</p>
             <hr>
@@ -53,13 +53,13 @@
         <br /><br />
         <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-success">Voltar para página inicial</a></center>
         <br><br />
-            <div class="jumbotron">
-                <div class="container">
-                    <div class="well well-large">
-                       <center><img src="http://sisgap.dired.ufla.br/assets/img/logo.png"/></center>
-                    </div> 
-                </div>
+        <div class="container shadow-lg p-3 mb-2 bg-light p-3 mb-2 bg-light">
+            <div class="">
+                <div class="text-center">
+                    <img src="<?php echo base_url('assets/img/logo.png') ?>" class="img-fluid" alt="Responsive image">
+                </div> 
             </div>
+          </div>
         </main>
     
         <footer class="container">

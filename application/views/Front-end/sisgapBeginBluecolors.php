@@ -53,7 +53,7 @@
                   <br /><br />
                     <div class="" style="max-width: 18rem;">
                         <div class="card-header font-italic border border-success shadow-lg p-3 mb-5 bg-primary rounded">
-                        <?php echo form_open('Welcome/login'); ?>
+                        <?php echo form_open('login'); ?>
                             <form>
                             <p class="text-write"><strong>Já possui cadastro?</strong></p>
                                 <div class="form-group">
@@ -66,7 +66,7 @@
                                     <label for="exampleInputPassword1"><p class="text-white"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"><strong>Senha</strong></p></label>
                                     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="Senha">
                                     <?php echo form_error('Senha') ?>
-                                    <h4><small class="text-danger"><?php echo $this->session->flashdata("error") ?></small></h4>
+                                    <h4 class=""><small class=""><?php echo $this->session->flashdata("error") ?></small></h4>
                                 </div>
                                 <div class="p-3 mb-2 bg-success text-white">
                                   <center><button type="submit" class="btn btn-success"><strong>Entrar</strong> <img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button></center>
@@ -74,7 +74,7 @@
                             </form>
                             <br />
                             <div class="p-3 mb-2 bg-success text-white">
-                              <center><a class="text-white" href=""><strong>Esqueci minha senha<img src="<?php echo base_url('assets/img/icone-esquecisenha.png') ?>" width="25px"></strong></a></center>
+                              <center><a class="text-white" href=""><strong><img src="<?php echo base_url('assets/img/icone-esquecisenha.png') ?>" width="25px">Esqueci minha senha</strong></a></center>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                         <div class="card-header font-italic border border-success shadow-lg p-3 mb-5 bg-primary rounded">
                             <p class="text-write"><strong>Não possui cadastro ainda?</strong></p>
                             <div class="p-3 mb-2 bg-success text-white">
-                                <center><a class="text-white" href="<?php echo base_url('formulario') ?>"><strong>Quero me cadastrar <img src="<?php echo base_url('assets/img/icone-cadastro.png') ?>" width="25px"></strong></a></center>
+                                <center><a class="text-white" href="<?php echo base_url('formulario') ?>"><strong><img src="<?php echo base_url('assets/img/icone-cadastro.png') ?>" width="25px">Quero me cadastrar </strong></a></center>
                             </div>
                         </div>
                         <!--<div class="card-header font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded "><strong>Já possui Cadastro?</strong>

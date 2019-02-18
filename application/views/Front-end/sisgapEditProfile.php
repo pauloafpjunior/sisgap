@@ -1,55 +1,49 @@
+
 <!doctype html>
 <html lang="pt-br">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title>Sistema de Gestão Administrativa e Pedagógica - SisGAP</title>
   </head>
-  <body class="p-3 mb-2 bg-light text-dark">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-            <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+  <body>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-p-3 mb-2 bg-primary text-white">
+          <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="">CONTATOS</a>
+              </li>
+            </ul>
+          </div>
+          <button class="btn btn-default bg-primary text-white">
+                <a href="<?php echo base_url('logged') ?>" class="text-white"><strong>Voltar</strong></a>
+                <a href="<?php echo base_url('logged') ?>"><img src="<?php echo base_url('assets/img/icone-voltar.png') ?>" width="30px"></a>
             </button>
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">CONTATOS</a>
-                </li>
-                </ul>
-                <?php echo form_open('login'); ?>
-                <form class="form-inline">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Usuário" name="CPF">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">*</span>
-                        </div>
-                        <input type="password" class="form-control" placeholder="Senha" name="Senha">
-                        <button type="submit" class="btn btn-success">Entrar<img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button>
-                    </div>
-                </form>
-            </div>
+          <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px"></button></a>
         </nav>
-        <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
         <br /><br />
-        <center><h1><span class="badge badge-primary border border-success">Formulário para cadastro de novos usuários</span></h1><br /></center>
+        <div class="p-3 mb-2 bg-success text-white row"></div>
+        <br /><br />
+        <center><h1><span class="badge badge-primary border border-success">Meus Dados</span></h1><br /></center>
+        <main role="main">
         <br />
-        <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("DadosIguais") ?></small></h4>
-        <?php //echo validation_errors(); ?>
-        <?php echo form_open('validation'); ?>
         <div class="container">
-            <form action="http://localhost/sisgap/index.php/Welcome" method="post" accept-charset="utf-8">
+        <?php echo form_open('update'); ?>
+        <div class="container">
+            <form action="<http://localhost/sisgap/index.php/Welcome>" method="post" accept-charset="utf-8">
                 <form method="post">
                     <h2>Dados <span class="badge badge-primary"> Pessoais<img src="<?php echo base_url('assets/img/icone-cpf.png') ?>" width="30px"></span></h2><br />
                     <div class="form-row">
@@ -60,39 +54,22 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputPassword4"><strong>Data de Nascimento</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento') ?>" name="Nascimento">
+                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento')?>" name="Nascimento">
                             <?php echo form_error('Nascimento') ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><strong>CPF</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="12345678900" value="<?php echo set_value('CPF') ?>" aria-label="With textarea" name="CPF">
+                            <input type="text" class="form-control form-control-sm" placeholder="12345678900" value="<?php echo set_value('CPF') ?>" aria-label="With textarea" name="CPF" readonly>
                             <small><p class="font-italic">Digite um CPF válido sem pontos ou traços</p></small>
                             <?php echo form_error('CPF') ?>
-                            <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("CPFIguais") ?></small></h4>
                         </div>
                         <div class="form-group col-md-6">
                             <label><strong>RG</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="XX99999999" value="<?php echo set_value('RG') ?>" aria-label="With textarea" name="RG">
+                            <input type="text" class="form-control form-control-sm" placeholder="XX99999999" value="<?php echo set_value('RG') ?>" aria-label="With textarea" name="RG" readonly>
                             <small><p class="font-italic">Digite um Registro válido sem pontos ou traços</p></small>
                             <?php echo form_error('RG') ?>
-                            <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("RGIguais") ?></small></h4>
-
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label><strong>Senha</strong></label>
-                            <input type="password" class="form-control form-control-sm" id="inputAddress" placeholder="Senha" name="Senha">
-                            <small><p class="font-italic">As senhas tem que ter no mínimo 6 caracteres</p></small>
-                            <?php echo form_error('Senha') ?>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4"><strong>Confirmar Senha</strong></label>
-                            <input type="password" class="form-control form-control-sm" placeholder="Confirmar Senha" name="ConfSenha">
-                            <small><p class="font-italic">As senhas tem que ter no mínimo 6 caracteres</p></small>
-                            <?php echo form_error('ConfSenha') ?>
                         </div>
                     </div>
                     <br />
@@ -100,7 +77,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-7">
                             <label for="inputEmail4"><strong>Endereço</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="Endereço" value="<?php echo set_value('Endereco') ?>" name="Endereco">
+                            <input type="text" class="form-control form-control-sm" placeholder="Endereço" value="<?php echo set_value('Endereco')?>" name="Endereco">
                             <small><p class="font-italic">Digite um Endereço válido seguido de um número da residência</p></small>
                             <?php echo form_error('Endereco') ?>
                         </div>
@@ -118,7 +95,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputPassword4"><strong>CEP</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="9999-999" value="<?php echo set_value('CEP') ?>" name="CEP">
+                            <input type="text" class="form-control form-control-sm" placeholder="99999-000" value="<?php echo set_value('CEP')?>" name="CEP">
                             <?php echo form_error('CEP') ?>
                         </div>
                     </div>
@@ -126,7 +103,7 @@
                         <div class="form-group col-md-7">
                             <label for="inputEmail4"><strong>Estado</strong></label>
                             <select id="inputState" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
-                                <option selected>Selecionar...</option>
+                                <option selected value='<?php echo set_value('Estado') ?>'>Selecionar...</option>
                                 <option value="ac">Acre</option> 
                                 <option value="al">Alagoas</option> 
                                 <option value="am">Amazonas</option> 
@@ -178,15 +155,10 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="form-group col-md-6">
+                        <div class="form-group col-md-12">
                             <label for="inputAddress"><strong>E-mail</strong></label>
                             <input type="email" class="form-control form-control-sm" id="inputAddress" placeholder="seu@email.com" value="<?php echo set_value('Email') ?>" name="Email">
                             <?php echo form_error('Email') ?>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputPassword4"><strong>Confirmar E-mail</strong></label>
-                            <input type="email" class="form-control form-control-sm" id="inputPassword4" placeholder="seu@email.com" value="<?php echo set_value('ConfEmail') ?>" name="ConfEmail">
-                            <?php echo form_error('ConfEmail') ?>
                         </div>
                     </div><br />
                     <h2>Atuação <span class="badge badge-primary">Profissional<img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></span></h2><br />
@@ -199,7 +171,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4"><strong>Pós-Graduação</strong></label>
-                            <select id="inputState" class="form-control form-control-sm" value="<?php echo set_value('PosGraduacao') ?>" name="PosGraduacao">
+                            <select id="inputState" class="form-control form-control-sm"  name="PosGraduacao">
                                 <option selected>Selecionar...</option>
                                 <option value="0" >Não possui pós-graduação</option> 
                                 <option value="1" >Pós-Graduação lato sensu (especialização em andamento)</option>
@@ -225,12 +197,12 @@
                     </div>
                     <p><strong>Possui experiência em docência?</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm" value="<?php echo set_value('PExpDoc') ?>" name="PExpDoc">
+                        <select class="form-control form-control-sm"  name="PExpDoc">
                             <option selected>Selecionar...</option>
                             <option value="0" >Sim</option> 
                             <option value="1" >Não</option>
                         </select>
-                        <?php echo form_error('PExDoc') ?>
+                        <?php echo form_error('PExpDoc') ?>
                     </div>
                     <p><strong>Experiência(s) Profissional</strong></p>
                     <div class="form-group col-md-13">
@@ -249,7 +221,7 @@
                     <h2>Experiência <span class="badge badge-primary">com Informática<img src="<?php echo base_url('assets/img/icone-computador.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Nível de Conhecimento em informática</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm" value="<?php echo set_value('ConhecInfo') ?>" name="ConhecInfo">
+                        <select class="form-control form-control-sm"  name="ConhecInfo">
                             <option selected>Selecionar...</option>
                             <option value="0" >Básico</option> 
                             <option value="1" >Intermediário</option>
@@ -268,7 +240,7 @@
                     <h2>Atuação <span class="badge badge-primary">como tutor na UFLA<img src="<?php echo base_url('assets/img/icone-universidade.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Já atuou ou atua como tutor na UFLA?</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm" value="<?php echo set_value('AtuaTutor') ?>" name="AtuaTutor">
+                        <select class="form-control form-control-sm" name="AtuaTutor">
                             <option selected>Selecionar...</option>
                             <option value="0" >Sim</option> 
                             <option value="1" >Não</option>
@@ -284,47 +256,46 @@
                         <small><p class="font-italic">Alguma informação adicional que queira levantar</p></small>
                         <?php echo form_error('OutrasInfo') ?>
                     </div><br />
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit"><img src="<?php echo base_url('assets/img/icone-success.png') ?>" width="30px">Confirmar Cadastro</button>
-                            <a class="btn btn-secondary btn-lg btn-block text-white bg-success" href="" role="button"><img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px">Cancelar Cadastro</a>
-                        </div>
-                    </div>
-                </form>
-            </form>
+            <br />                              
         </div>
-        <br><br />
-        <div class="container p-3 mb-2 bg-light text-dark">
-            <div class="">
-                <div class="text-center">
-                    <img src="<?php echo base_url('assets/img/LogoFooter.png.png') ?>" class="img-fluid" alt="Responsive image">
-                </div> 
-            </div>
-        </div>
-        <br />
-        <footer class="container shadow-lg p-3 mb-5 bg-white rounded">
-            <div class="footer p-3 mb-2 bg-primary text-white">
+        <center><h4><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h4></center>
+        <div class="container"><button class="btn btn-success btn-lg btn-block container" type="submit">Alterar Dados</button></div><br />
+        <div class="container"><a href="<?php echo base_url('inicio') ?>" class="btn btn-primary btn-lg btn-block">Voltar para página inicial</a></div>
+        <br><br /><br /><br />
+        </main>
+        <footer class="container">
+            <div class="footer">
                 <center>
-                    <div id="footbar">
-                        <div width="100%" align="center">
-                          <br />
-                            <p align="center" class="text">
-                            <strong>Diretoria de Educação a Distância - DIRED</strong><br>
-                            <i>Campus Histórico da UFLA - Lavras/MG - 37.200-000</i><br>
-                            <strong>Telefone</strong>: (35) 3829-1035<br>					
-                            <strong>Email</strong>: editais@dired.ufla.br
-                            </p>
-                        </div>
+                  <div id="footbar">
+                  
+                    <div width="100%" align="center">
+                      <p align="center" class="text">
+                        <strong>Diretoria de Educação a Distância - DIRED</strong><br>
+                        <i>Campus Histórico da UFLA - Lavras/MG - 37.200-000</i><br>
+                        <strong>Telefone</strong>: (35) 3829-1035<br>					
+                        <strong>Email</strong>: editais@dired.ufla.br
+                      </p>
                     </div>
+                  </div>
                 </center>
-                <p align="center">
-                    Copyright © 2019 - <a href='http://www.dired.ufla.br' target="_blank"><span class="badge badge-dark">DIRED</span></a> - Diretoria de Educação a 
-                    Distância
-                <br><br>
-                </p>
-            </div>
+              
+                  <p align="center">
+                    Copyright © 2018 - <a style='color: #000;' href='http://www.dired.ufla.br' target="_blank">DIRED</a> - Diretoria de Educação a 
+              Distância
+                    <br><br>
+                  </p>
+              </div>
         </footer>
-    <!--by FaBiUsKcomp-->
+        <!--By FaBiUsKcomp-->
+    
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
