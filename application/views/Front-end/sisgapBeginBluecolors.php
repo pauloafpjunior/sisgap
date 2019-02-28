@@ -33,12 +33,6 @@
         </nav>
         <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
         <div class="container">
-            <!---<div class="row">
-                <div class="col-12 text-center my-5">
-                    <h1 class="display-3 shadow p-3 mb-5 bg-white rounded">Bem-vindo ao <span class="badge badge-dark"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="100" width="380"></span></h1>
-                    <h3 class="font-italic border border-secondary shadow-lg p-3 mb-5 bg-white rounded">Sistema de Gestão Administrativa e Pedagógica - UFLA</h3>
-                </div>
-            </div>-->
             <br />
             <div class="container shadow-lg p-3 mb-2 bg-light p-3 mb-2 bg-light">
               <div class="">
@@ -58,7 +52,7 @@
                             <p class="text-write"><strong>Já possui cadastro?</strong></p>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1"><p class="text-write"><img src="<?php echo base_url('assets/img/icone-cpf.png') ?>" width="30px"><strong>Seu CPF</strong></p></label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="00000000000" name="CPF" value="<?php echo set_value('CPF') ?>">
+                                    <input type="text" class="form-control" id="cpf" aria-describedby="emailHelp" placeholder="000.000.000-00" name="CPF" onpaste="return false" value="<?php echo set_value('CPF') ?>">
                                     <small id="emailHelp" class="font-italic text-write">CPF sem pontos ou traços</small><br />
                                     <?php echo form_error('CPF') ?>
                                 </div>
@@ -85,21 +79,9 @@
                                 <center><a class="text-white" href="<?php echo base_url('formulario') ?>"><strong><img src="<?php echo base_url('assets/img/icone-cadastro.png') ?>" width="25px">Quero me cadastrar </strong></a></center>
                             </div>
                         </div>
-                        <!--<div class="card-header font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded "><strong>Já possui Cadastro?</strong>
-                            <div class="card-body p-3 mb-2 bg-light text-dark border border-success">
-                              <center><a class="text-success" href=""><strong>Acesso Administrativo</strong></a></center>
-                            </div>
-                        </div>-->
                     </div> 
                 </div>
                 <div class="col-8">
-                    <!--<div class="jumbotron">
-                        <div class="container">
-                            <div class="text-center">
-                                <img src="http://sisgap.dired.ufla.br/assets/img/ajuda.png" class="img-fluid" alt="Responsive image">
-                            </div> 
-                        </div>
-                    </div>-->
                     <div class="col-12 text-center my-5">
                       <h3 class="font-italic text-write border border-success shadow-lg p-3 mb-5 bg-primary rounded"> <img src="<?php echo base_url('assets/img/icone-tutorial.png') ?>" width="40px">Mini tutorial do processo </h3>
                     </div>
@@ -259,10 +241,15 @@
         </footer>
     
     <!--By FaBiUsKcomp-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#cpf").mask("000.000.000-00");
+        })
+    </script>
   </body>
 </html>

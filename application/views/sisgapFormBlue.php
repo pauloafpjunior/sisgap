@@ -4,7 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -60,21 +59,21 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputPassword4"><strong>Data de Nascimento</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento') ?>" name="Nascimento">
+                            <input type="text" class="form-control form-control-sm" id="data" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento') ?>" name="Nascimento">
                             <?php echo form_error('Nascimento') ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><strong>CPF</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="12345678900" value="<?php echo set_value('CPF') ?>" aria-label="With textarea" name="CPF">
+                            <input type="text" class="form-control form-control-sm" onpaste="return false" placeholder="123.456.789-00" value="<?php echo set_value('CPF') ?>" aria-label="With textarea" id="cpf" name="CPF">
                             <small><p class="font-italic">Digite um CPF válido sem pontos ou traços</p></small>
                             <?php echo form_error('CPF') ?>
                             <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("CPFIguais") ?></small></h4>
                         </div>
                         <div class="form-group col-md-6">
                             <label><strong>RG</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="XX99999999" value="<?php echo set_value('RG') ?>" aria-label="With textarea" name="RG">
+                            <input type="text" class="form-control form-control-sm"  id="rg" placeholder="XX99999999" value="<?php echo set_value('RG') ?>" aria-label="With textarea" name="RG">
                             <small><p class="font-italic">Digite um Registro válido sem pontos ou traços</p></small>
                             <?php echo form_error('RG') ?>
                             <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("RGIguais") ?></small></h4>
@@ -84,13 +83,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><strong>Senha</strong></label>
-                            <input type="password" class="form-control form-control-sm" id="inputAddress" placeholder="Senha" name="Senha">
+                            <input type="password" class="form-control form-control-sm" id="inputAddress" onpaste="return false" placeholder="Senha" name="Senha">
                             <small><p class="font-italic">As senhas tem que ter no mínimo 6 caracteres</p></small>
                             <?php echo form_error('Senha') ?>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4"><strong>Confirmar Senha</strong></label>
-                            <input type="password" class="form-control form-control-sm" placeholder="Confirmar Senha" name="ConfSenha">
+                            <input type="password" class="form-control form-control-sm" onpaste="return false" placeholder="Confirmar Senha" name="ConfSenha">
                             <small><p class="font-italic">As senhas tem que ter no mínimo 6 caracteres</p></small>
                             <?php echo form_error('ConfSenha') ?>
                         </div>
@@ -118,7 +117,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputPassword4"><strong>CEP</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="9999-999" value="<?php echo set_value('CEP') ?>" name="CEP">
+                            <input type="text" class="form-control form-control-sm" id="cep" placeholder="99999-999" value="<?php echo set_value('CEP') ?>" name="CEP">
                             <?php echo form_error('CEP') ?>
                         </div>
                     </div>
@@ -166,13 +165,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputAddress"><strong>Celular</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="(99)9999-9999" value="<?php echo set_value('Celular') ?>" name="Celular">
+                            <input type="text" class="form-control form-control-sm" id="celular" placeholder="(99) 9 9999-9999" value="<?php echo set_value('Celular') ?>" name="Celular">
                             <small><p class="font-italic">DDD junto ao telefone</p></small>
                             <?php echo form_error('Celular') ?>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4"><strong>Telefone</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="(99)9999-9999" value="<?php echo set_value('Telefone') ?>" name="Telefone">
+                            <input type="text" class="form-control form-control-sm" id="telefone" placeholder="(99) 9999-9999" value="<?php echo set_value('Telefone') ?>" name="Telefone">
                             <small><p class="font-italic">DDD junto ao telefone, se não for nativo do Brasil, informar o codigo do país</p></small>
                             <?php echo form_error('Telefone') ?>
                         </div>
@@ -235,14 +234,14 @@
                     <p><strong>Experiência(s) Profissional</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpProf') ?>" name="ExpProf"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="ExpProf"><?php echo set_value('ExpProf') ?></textarea>
                         </div>
                         <?php echo form_error('ExpProf') ?>
                     </div><br />
                     <p><strong>Experiência(s) Profissional na área de EAD</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpEAD') ?>" name="ExpEAD"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="ExpEAD"><?php echo set_value('ExpEAD') ?></textarea>
                         </div>
                         <?php echo form_error('ExpEAD') ?>
                     </div><br />
@@ -279,7 +278,7 @@
                     <p><strong>Outras informações de Cadastro/Currículo</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('OutrasInfo') ?>" name="OutrasInfo"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="OutrasInfo"><?php echo set_value('OutrasInfo') ?></textarea>
                         </div>
                         <small><p class="font-italic">Alguma informação adicional que queira levantar</p></small>
                         <?php echo form_error('OutrasInfo') ?>
@@ -287,7 +286,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <button class="btn btn-primary btn-lg btn-block" type="submit"><img src="<?php echo base_url('assets/img/icone-success.png') ?>" width="30px">Confirmar Cadastro</button>
-                            <a class="btn btn-secondary btn-lg btn-block text-white bg-success" href="" role="button"><img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px">Cancelar Cadastro</a>
+                            <a class="btn btn-secondary btn-lg btn-block text-white bg-success" href="<?php echo base_url('inicio') ?>" role="button"><img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px">Cancelar Cadastro</a>
                         </div>
                     </div>
                 </form>
@@ -327,8 +326,20 @@
     <!--by FaBiUsKcomp-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#data").mask("00/00/0000");
+            $("#cpf").mask("000.000.000-00");
+            $("#cep").mask("00.000-000");
+            $("#celular").mask("(00) 00000-0000");
+            $("#telefone").mask("(00) 0000-0000");
+        })
+    </script>
   </body>
 </html>

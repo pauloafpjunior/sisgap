@@ -59,6 +59,11 @@ $route['validation'] = 'Controllerone/form_validate';
 $route['logged'] = 'Controllerone/logged';
 $route['change'] = 'Controllerone/change';
 $route['update'] = 'Controllerone/update';
+$route['changePass'] = 'Controllerone/changePass';
+$route['newPass'] = 'Controllerone/newPass';
+$route['sendMail'] = 'Controllerone/sendMail';
+$route['validtoken'] = 'Controllerone/validToken';
+$route['updatetoken'] = 'Controllerone/updateToken';
 $route['quit'] = 'Controllerone/Quit';
 
 //Note que se seu servidor nao estiver reconhecendo as rotas, você deve dar permissão amigavel para o acesso

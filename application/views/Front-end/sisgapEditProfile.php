@@ -32,7 +32,6 @@
                 <a href="<?php echo base_url('logged') ?>" class="text-white"><strong>Voltar</strong></a>
                 <a href="<?php echo base_url('logged') ?>"><img src="<?php echo base_url('assets/img/icone-voltar.png') ?>" width="30px"></a>
             </button>
-          <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px"></button></a>
         </nav>
         <br /><br />
         <div class="p-3 mb-2 bg-success text-white row"></div>
@@ -54,7 +53,7 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="inputPassword4"><strong>Data de Nascimento</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento')?>" name="Nascimento">
+                            <input type="text" class="form-control form-control-sm" id="data" placeholder="DD/MM/AAAA" value="<?php echo set_value('Nascimento')?>" name="Nascimento">
                             <?php echo form_error('Nascimento') ?>
                         </div>
                     </div>
@@ -95,43 +94,14 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputPassword4"><strong>CEP</strong></label>
-                            <input type="text" class="form-control form-control-sm" placeholder="99999-000" value="<?php echo set_value('CEP')?>" name="CEP">
+                            <input type="text" class="form-control form-control-sm" id="cep" placeholder="99999-000" value="<?php echo set_value('CEP')?>" name="CEP">
                             <?php echo form_error('CEP') ?>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-7">
                             <label for="inputEmail4"><strong>Estado</strong></label>
-                            <select id="inputState" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
-                                <option selected value='<?php echo set_value('Estado') ?>'>Selecionar...</option>
-                                <option value="ac">Acre</option> 
-                                <option value="al">Alagoas</option> 
-                                <option value="am">Amazonas</option> 
-                                <option value="ap">Amapá</option> 
-                                <option value="ba">Bahia</option> 
-                                <option value="ce">Ceará</option> 
-                                <option value="df">Distrito Federal</option> 
-                                <option value="es">Espírito Santo</option> 
-                                <option value="go">Goiás</option> 
-                                <option value="ma">Maranhão</option> 
-                                <option value="mt">Mato Grosso</option> 
-                                <option value="ms">Mato Grosso do Sul</option> 
-                                <option value="mg">Minas Gerais</option> 
-                                <option value="pa">Pará</option> 
-                                <option value="pb">Paraíba</option> 
-                                <option value="pr">Paraná</option> 
-                                <option value="pe">Pernambuco</option> 
-                                <option value="pi">Piauí</option> 
-                                <option value="rj">Rio de Janeiro</option> 
-                                <option value="rn">Rio Grande do Norte</option> 
-                                <option value="ro">Rondônia</option> 
-                                <option value="rs">Rio Grande do Sul</option> 
-                                <option value="rr">Roraima</option> 
-                                <option value="sc">Santa Catarina</option> 
-                                <option value="se">Sergipe</option> 
-                                <option value="sp">São Paulo</option> 
-                                <option value="to">Tocantins</option> 
-                            </select>
+                                <?php echo form_dropdown('Estado', $dadosEstado, $Est, 'class="form-control form-control-sm"') ?>
                             <?php echo form_error('Estado') ?>
                         </div>
                         <div class="form-group col-md-5">
@@ -143,13 +113,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputAddress"><strong>Celular</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="(99)9999-9999" value="<?php echo set_value('Celular') ?>" name="Celular">
+                            <input type="text" class="form-control form-control-sm" id="celular" placeholder="(99) 9999-9999" value="<?php echo set_value('Celular') ?>" name="Celular">
                             <small><p class="font-italic">DDD junto ao telefone</p></small>
                             <?php echo form_error('Celular') ?>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4"><strong>Telefone</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="(99)9999-9999" value="<?php echo set_value('Telefone') ?>" name="Telefone">
+                            <input type="text" class="form-control form-control-sm" id="telefone" placeholder="(99) 9999-9999" value="<?php echo set_value('Telefone') ?>" name="Telefone">
                             <small><p class="font-italic">DDD junto ao telefone, se não for nativo do Brasil, informar o codigo do país</p></small>
                             <?php echo form_error('Telefone') ?>
                         </div>
@@ -171,19 +141,7 @@
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4"><strong>Pós-Graduação</strong></label>
-                            <select id="inputState" class="form-control form-control-sm"  name="PosGraduacao">
-                                <option selected>Selecionar...</option>
-                                <option value="0" >Não possui pós-graduação</option> 
-                                <option value="1" >Pós-Graduação lato sensu (especialização em andamento)</option>
-                                <option value="2" >Pós-Graduação lato sensu (especialização)</option>
-                                <option value="3" >Pós-Graduação stricto sensu (mestrado em andamento)</option>
-                                <option value="4" >Pós-Graduação stricto sensu (especialização concluída com mestrado em andamento)</option>
-                                <option value="5" >Pós-Graduação stricto sensu (mestrado concluído)</option>
-                                <option value="6" >Pós-Graduação stricto sensu (mestre com doutorado em andamento)</option>
-                                <option value="7" >Pós-Graduação stricto sensu (doutorado direto concluído)</option>
-                                <option value="8" >Pós-Graduação stricto sensu (mestrado e doutorado concluídos)</option>
-                                <option value="9" >Pós-Graduação stricto sensu (Pós-doutorado concluído)</option>
-                            </select>
+                                <?php echo form_dropdown('PosGraduacao', $dadosPosGrad, $PosG, 'class="form-control form-control-sm"') ?>
                             <?php echo form_error('PosGraduacao') ?>
                         </div>
                     </div>
@@ -197,36 +155,27 @@
                     </div>
                     <p><strong>Possui experiência em docência?</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm"  name="PExpDoc">
-                            <option selected>Selecionar...</option>
-                            <option value="0" >Sim</option> 
-                            <option value="1" >Não</option>
-                        </select>
+                        <?php echo form_dropdown('PExpDoc', $dadosExpDoc, $PExpD, 'class="form-control form-control-sm"') ?>   
                         <?php echo form_error('PExpDoc') ?>
                     </div>
                     <p><strong>Experiência(s) Profissional</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpProf') ?>" name="ExpProf"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="ExpProf"><?php echo set_value('ExpProf') ?></textarea>
                         </div>
                         <?php echo form_error('ExpProf') ?>
                     </div><br />
                     <p><strong>Experiência(s) Profissional na área de EAD</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('ExpEAD') ?>" name="ExpEAD"></textarea>
+                            <textarea class="form-control" aria-label="With textarea"  name="ExpEAD"><?php echo set_value('ExpEAD') ?></textarea>
                         </div>
                         <?php echo form_error('ExpEAD') ?>
                     </div><br />
                     <h2>Experiência <span class="badge badge-primary">com Informática<img src="<?php echo base_url('assets/img/icone-computador.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Nível de Conhecimento em informática</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm"  name="ConhecInfo">
-                            <option selected>Selecionar...</option>
-                            <option value="0" >Básico</option> 
-                            <option value="1" >Intermediário</option>
-                            <option value="2" >Avançado</option>
-                        </select>
+                        <?php echo form_dropdown('ConhecInfo', $dadosConhecInfo, $ConInf, 'class="form-control form-control-sm"') ?>
                     </div>
                     <?php echo form_error('ConhecInfo') ?>
                     <div class="form-row">
@@ -240,27 +189,21 @@
                     <h2>Atuação <span class="badge badge-primary">como tutor na UFLA<img src="<?php echo base_url('assets/img/icone-universidade.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Já atuou ou atua como tutor na UFLA?</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm" name="AtuaTutor">
-                            <option selected>Selecionar...</option>
-                            <option value="0" >Sim</option> 
-                            <option value="1" >Não</option>
-                        </select>
+                        <?php echo form_dropdown('AtuaTutor', $dadosAtuaTutor, $AtuaT, 'class="form-control form-control-sm"') ?>
                     </div>
                     <?php echo form_error('AtuaTutor') ?>
                     <h2>Informações <span class="badge badge-primary">Adicionais<img src="<?php echo base_url('assets/img/icone-info.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Outras informações de Cadastro/Currículo</strong></p>
                     <div class="form-group col-md-13">
                         <div class="input-group">
-                            <textarea class="form-control" aria-label="With textarea" value="<?php echo set_value('OutrasInfo') ?>" name="OutrasInfo"></textarea>
+                            <textarea class="form-control" aria-label="With textarea" name="OutrasInfo"><?php echo set_value('OutrasInfo') ?></textarea>
                         </div>
                         <small><p class="font-italic">Alguma informação adicional que queira levantar</p></small>
                         <?php echo form_error('OutrasInfo') ?>
                     </div><br />
             <br />                              
         </div>
-        <center><h4><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h4></center>
         <div class="container"><button class="btn btn-success btn-lg btn-block container" type="submit">Alterar Dados</button></div><br />
-        <div class="container"><a href="<?php echo base_url('inicio') ?>" class="btn btn-primary btn-lg btn-block">Voltar para página inicial</a></div>
         <br><br /><br /><br />
         </main>
         <footer class="container">
@@ -286,20 +229,25 @@
                   </p>
               </div>
         </footer>
-        <!--By FaBiUsKcomp-->
-    
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
+        
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!--By FaBiUsKcomp-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#data").mask("00/00/0000");
+            $("#cep").mask("00.000-000");
+            $("#celular").mask("(00) 00000-0000");
+            $("#telefone").mask("(00) 0000-0000");
+        })
+    </script>
   </body>
 </html>

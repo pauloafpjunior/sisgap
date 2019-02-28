@@ -46,9 +46,10 @@
         </div>-->
         <div class="alert alert-success container" role="alert">
           <h4 class="alert-heading">Cadastro Realizado com sucesso !</h4>
-            <p>Concluído, suas informações foram salvas e serão armazenadas com segurança para que haja nenhuma violação.</p>
+            <p>---------------------------------------------------------------------------------------------------------------------------
+            -------------------------------------</p>
             <hr>
-            <p class="mb-0">Agora para logar, basta entrar com seu usuário e sua senha na pagina inicial.</p>
+            <p class="mb-0">Seja bem-vindo ao SISGAP.</p>
         </div>
         <br /><br />
         <center><a href="<?php echo base_url('inicio') ?>" class="badge badge-success">Voltar para página inicial</a></center>

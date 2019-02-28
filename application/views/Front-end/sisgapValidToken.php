@@ -25,26 +25,49 @@
                         <a class="nav-link text-white" href="">CONTATOS</a>
                     </li>
                 </ul>
-            </div> 
-            <button class="btn btn-default bg-primary text-white">
-                <a href="<?php echo base_url('change') ?>" class="text-white"><strong>Alterar meu dados</strong></a>
-                <a href="<?php echo base_url('change') ?>"><img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></a>
-            </button>
-            <button class="btn btn-default bg-primary text-white">
-                <a href="<?php echo base_url('changePass') ?>" class="text-white"><strong>Alterar minha senha</strong></a>
-                <a href="<?php echo base_url('changePass') ?>"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></a>
-            </button>
-            <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px"></button></a>
+            </div>
         </nav>
         <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
-        <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
-        <br/><br/>
+        <br /><br /><br />
+        <div class="container border border-success">
+          <h4 class="p-3 mb-2 bg-primary text-white text-center">Preencha os campos abaixo com seu cpf cadastrado, senha e o codigo que você recebeu por email:</h4><br>
+          <?php echo form_open('updatetoken'); ?>
+          <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputAddress"><strong>Seu CPF</strong></label>
+                    <input type="text" class="form-control form-control-sm" id="cpf" placeholder="000.000.000-00" onpaste="return false" value="<?php echo set_value('CPF') ?>" name="CPF">
+                    <small><p class="font-italic">Cpf válido sem pontos ou traços</p></small>
+                    <?php echo form_error('CPF') ?>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4"><strong>Sua Senha</strong></label>
+                    <input type="password" class="form-control form-control-sm" id="telefone" placeholder="*********" name="Senha">
+                    <?php echo form_error('Senha') ?>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <label for="inputAddress"><strong>Seu Código</strong></label>
+                    <input type="text" class="form-control form-control-sm" id="cpf" placeholder="Código recebido por Email" name="Token">
+                    <?php echo form_error('Token') ?>
+                </div>
+            </div>
+            <center><h3><small class="text-success"><?php echo $this->session->flashdata("sucesso") ?></small></h3></center>
+            <br /><br />
+        <button class="btn btn-success btn-lg btn-block" type="submit"><img src="<?php echo base_url('assets/img/icone-success.png') ?>" width="30px">Confirmar Cadastro</button>
+        </div>
+        </div>
     
     <!--By FaBiUsKcomp-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
+    <script src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#cpf").mask("000.000.000-00");
+        })
+    </script>
   </body>
 </html>

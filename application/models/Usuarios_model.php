@@ -95,6 +95,7 @@ class usuarios_model extends CI_Model {
             $infoAtuaTutor = $row->AtuaTutor;
             $infoOutrasInfo = $row->OutrasInfo;
         }
+        
         $data = [     'Nome' => $infoNome,
                       'Nascimento' => $infoNascimento,
                       'CPF' => $infoCPF,
@@ -120,6 +121,26 @@ class usuarios_model extends CI_Model {
                       'OutrasInfo' => $infoOutrasInfo
                 ];
         return $data;
+    }
+
+    public function checkStatus($CPF){
+        $this->db->where('CPF', $CPF);
+        $query = $this->db->get('Usuarios');
+        foreach($query->result() as $row){
+            $infoStatus = $row->status;
+        }
+        return $infoStatus;
+    }
+
+    //Funcao para a validação da conta
+    public function validToken($CPF, $Senha){
+        $this->db->where('CPF', $CPF);
+        $this->db->where('Senha', $Senha);
+        $query = $this->db->get('Usuarios');
+        foreach($query->result() as $row){
+            $infoToken = $row->token_verificacao;
+        }
+        return $infoToken;
     }
 
     // Consultar: https://codeigniter.com/user_guide/database/query_builder.html
