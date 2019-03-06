@@ -27,11 +27,11 @@
                 <a class="nav-link text-white" href="">CONTATOS</a>
               </li>
             </ul>
-          </div>
-          <button class="btn btn-default bg-primary text-white">
+            <button class="btn btn-default bg-primary text-white">
                 <a href="<?php echo base_url('logged') ?>" class="text-white"><strong>Voltar</strong></a>
                 <a href="<?php echo base_url('logged') ?>"><img src="<?php echo base_url('assets/img/icone-voltar.png') ?>" width="30px"></a>
             </button>
+          </div>
         </nav>
         <br /><br />
         <div class="p-3 mb-2 bg-success text-white row"></div>

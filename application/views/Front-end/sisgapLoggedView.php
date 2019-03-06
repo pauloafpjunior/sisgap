@@ -25,16 +25,16 @@
                         <a class="nav-link text-white" href="">CONTATOS</a>
                     </li>
                 </ul>
+                <button class="btn btn-default bg-primary text-white">
+                    <a href="<?php echo base_url('change') ?>" class="text-white"><strong>Alterar meu dados</strong></a>
+                    <a href="<?php echo base_url('change') ?>"><img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></a>
+                </button>
+                <button class="btn btn-default bg-primary text-white">
+                    <a href="<?php echo base_url('changePass') ?>" class="text-white"><strong>Alterar minha senha</strong></a>
+                    <a href="<?php echo base_url('changePass') ?>"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></a>
+                </button>
+                <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-canc.png') ?>" width="30px"></button></a>
             </div> 
-            <button class="btn btn-default bg-primary text-white">
-                <a href="<?php echo base_url('change') ?>" class="text-white"><strong>Alterar meu dados</strong></a>
-                <a href="<?php echo base_url('change') ?>"><img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></a>
-            </button>
-            <button class="btn btn-default bg-primary text-white">
-                <a href="<?php echo base_url('changePass') ?>" class="text-white"><strong>Alterar minha senha</strong></a>
-                <a href="<?php echo base_url('changePass') ?>"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></a>
-            </button>
-            <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px"></button></a>
         </nav>
         <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
         <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>

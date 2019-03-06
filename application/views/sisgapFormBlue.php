@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="pt-br">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <title>Sistema de Gestão Administrativa e Pedagógica - SisGAP</title>
   </head>
@@ -20,29 +20,20 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="<?php echo base_url('inicio') ?>">INÍCIO <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link" href="">CONTATOS</a>
                 </li>
                 </ul>
-                <?php echo form_open('login'); ?>
-                <form class="form-inline">
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">@</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Usuário" name="CPF">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">*</span>
-                        </div>
-                        <input type="password" class="form-control" placeholder="Senha" name="Senha">
-                        <button type="submit" class="btn btn-success">Entrar<img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button>
-                    </div>
-                </form>
+                <button class="btn btn-default bg-primary text-white">
+                    <a href="<?php echo base_url('inicio') ?>" class="text-white"><strong>Acesso Administrativo</strong></a>
+                    <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/icone-admaccess.png') ?>" width="30px"></a>
+                </button>
             </div>
         </nav>
         <div class="p-3 mb-2 bg-success text-white row">.bg-success</div>
         <br /><br />
-        <center><h1><span class="badge badge-primary border border-success">Formulário para cadastro de novos usuários</span></h1><br /></center>
+        <!--<center><h1><span class="badge badge-primary border border-success">Formulário para cadastro de novos usuários</span></h1><br /></center>-->
+        <h1 class="text-primary text-center font-italic">Formulário para cadastro de novos usuários</h1><br />
         <br />
         <h4 class="text-center"><small class="text-danger"><?php echo $this->session->flashdata("DadosIguais") ?></small></h4>
         <?php //echo validation_errors(); ?>
@@ -284,15 +275,15 @@
                         <?php echo form_error('OutrasInfo') ?>
                     </div><br />
                     <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <button class="btn btn-primary btn-lg btn-block" type="submit"><img src="<?php echo base_url('assets/img/icone-success.png') ?>" width="30px">Confirmar Cadastro</button>
-                            <a class="btn btn-secondary btn-lg btn-block text-white bg-success" href="<?php echo base_url('inicio') ?>" role="button"><img src="<?php echo base_url('assets/img/icone-cancel.png') ?>" width="30px">Cancelar Cadastro</a>
+                        <div class="form-group col-md-12 text-center">
+                            <button class="btn btn-primary btn-lg" type="submit"><img src="<?php echo base_url('assets/img/icone-success.png') ?>" width="30px">Confirmar Cadastro</button>
+                            <a class="btn btn-success btn-lg" href="<?php echo base_url('inicio') ?>" role="button"><img src="<?php echo base_url('assets/img/icone-canc.png') ?>" width="30px">Cancelar Cadastro</a>
                         </div>
                     </div>
                 </form>
             </form>
         </div>
-        <br><br />
+        <br><br /><br />
         <div class="container p-3 mb-2 bg-light text-dark">
             <div class="">
                 <div class="text-center">
@@ -324,12 +315,9 @@
             </div>
         </footer>
     <!--by FaBiUsKcomp-->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="<?php echo base_url('assets/js/jquery-3.3.1.min.js') ?>"></script>
     <script src="<?php echo base_url('assets/js/jquery.mask.min.js') ?>" type="text/javascript"></script>
     <script type="text/javascript">
