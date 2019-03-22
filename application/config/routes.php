@@ -57,14 +57,16 @@ $route['formulario'] = 'Controllerone/formulario';
 $route['login'] = 'Controllerone/login';
 $route['validation'] = 'Controllerone/form_validate';
 $route['logged'] = 'Controllerone/logged';
-$route['change'] = 'Controllerone/change';
-$route['update'] = 'Controllerone/update';
+$route['change'] = 'Controllerchange/change';
+$route['update'] = 'Controllerupdate/update';
 $route['changePass'] = 'Controllerone/changePass';
 $route['newPass'] = 'Controllerone/newPass';
 $route['sendMail'] = 'Controllerone/sendMail';
 $route['validtoken'] = 'Controllerone/validToken';
 $route['updatetoken'] = 'Controllerone/updateToken';
 $route['quit'] = 'Controllerone/Quit';
+
+$route['teste'] = 'ControllerTest/teste';
 
 //Note que se seu servidor nao estiver reconhecendo as rotas, você deve dar permissão amigavel para o acesso
 //Aqui tem um link de como arrumar no ubunto : https://www.digitalocean.com/community/tutorials/how-to-rewrite-urls-with-mod_rewrite-for-apache-on-ubuntu-16-04
