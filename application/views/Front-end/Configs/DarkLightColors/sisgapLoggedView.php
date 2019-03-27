@@ -34,7 +34,7 @@
                     <a href="<?php echo base_url('changePass') ?>" class="text-white"><strong>Alterar minha senha</strong></a>
                     <a href="<?php echo base_url('changePass') ?>"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></a>
                 </button>
-                <a href="<?php echo base_url('quit') ?>"><button class="btn btn-success" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-canc.png') ?>" width="30px"></button></a>
+                <a href="<?php echo base_url('quit') ?>"><button class="btn btn-info" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-canc.png') ?>" width="30px"></button></a>
             </div> 
         </nav>
         <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>

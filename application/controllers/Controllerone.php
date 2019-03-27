@@ -34,7 +34,7 @@ class Controllerone extends CI_Controller {
 		//Aqui será implementada a função de login no sistema.
 		$this->form_validation->set_rules ('CPF', 'CPF', 'required','max_length[9]|trim|xss_clean', array('required' => 'CPF não atribuído ou inválido!'));
 		$this->form_validation->set_rules ('Senha', 'Senha', 'trim|required|min_length[6]');
-		$this->form_validation->set_error_delimiters('<div class="p-3 mb-2 bg-danger text-white shadow-lg p-3 mb-5 bg-danger rounded">', '</div>');
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
 
 		if($this->form_validation->run() == FALSE){
 			$erros = array('erro' => validation_errors()); 
@@ -96,12 +96,12 @@ class Controllerone extends CI_Controller {
 		$this->form_validation->set_rules ('ConfEmail', 'Confirme seu E-mail', 'trim|required|matches[Email]');
 		$this->form_validation->set_rules ('Graduacao', 'Graduação', 'required', array('required' => 'O campo Graduação é obrigatório!'));
 		$this->form_validation->set_rules ('PosGraduacao', 'Pós-Graduação', 'required');
-		$this->form_validation->set_rules ('AreaposGrad', 'Área Pós-Graduação', 'required');
+		$this->form_validation->set_rules ('AreaposGrad', 'Área Pós-Graduação');
 	    $this->form_validation->set_rules ('PExpDoc', 'Possui experiência em docência?', 'required');
-		$this->form_validation->set_rules ('ExpProf', 'Experiência(s) Profissional', 'required');
-		$this->form_validation->set_rules ('ExpEAD', 'Experiência(s) Profissional na área de EAD', 'required');
-		$this->form_validation->set_rules ('ConhecInfo', 'Nível de Conhecimento em informática', 'required');
-		$this->form_validation->set_rules ('Curriculo', 'Currículo Lattes', 'required', 'valid_link');
+		$this->form_validation->set_rules ('ExpProf', 'Experiência(s) Profissional');
+		$this->form_validation->set_rules ('ExpEAD', 'Experiência(s) Profissional na área de EAD');
+		$this->form_validation->set_rules ('ConhecInfo', 'Nível de Conhecimento em informática');
+		$this->form_validation->set_rules ('Curriculo', 'Currículo Lattes', 'valid_link');
 		$this->form_validation->set_rules ('OutrasInfo', 'Outras informações adicionais');
 
 		$CPF = $this->input->post('CPF');

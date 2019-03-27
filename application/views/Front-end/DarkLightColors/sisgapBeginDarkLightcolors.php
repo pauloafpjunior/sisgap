@@ -64,12 +64,12 @@
                                     <br/><?php echo form_error('Senha') ?>
                                     <h4 class=""><small class=""><?php echo $this->session->flashdata("error") ?></small></h4>
                                 </div>
-                                <div class="text-white text-center btn btn-success btn btn-success btn-lg btn-block"">
-                                  <button type="submit" class="btn btn-success btn-block"><strong>Entrar</strong> <img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button>
+                                <div class="text-white text-center btn btn-primary btn btn-primary btn-lg btn-block"">
+                                  <button type="submit" class="btn btn-primary btn-block"><strong>Entrar</strong> <img src="<?php echo base_url('assets/img/icone-entrar.png') ?>" width="25px"></button>
                                 </div>
                             </form>
                             <br />
-                            <div class="p-3 mb-2 bg-success text-white text-center">
+                            <div class="p-3 mb-2 bg-primary text-white text-center">
                               <center><a class="text-white" href=""><strong><img src="<?php echo base_url('assets/img/icone-esquecisenha.png') ?>" width="25px">Esqueci minha senha</strong></a></center>
                             </div>
                         </div>
@@ -77,7 +77,7 @@
                     <div class="areaNlogin" style="max-width: 18rem;">
                         <div class="card-header font-italic border border-info shadow-lg p-3 mb-5 bg-light rounded">
                             <p class="text-dark"><strong>Não possui cadastro ainda?</strong></p>
-                            <div class="p-3 mb-2 bg-success text-dark">
+                            <div class="p-3 mb-2 bg-primary text-dark">
                                 <center><a class="text-white" href="<?php echo base_url('formulario') ?>"><strong><img src="<?php echo base_url('assets/img/icone-cadastro.png') ?>" width="25px">Quero me cadastrar </strong></a></center>
                             </div>
                         </div>
@@ -122,87 +122,19 @@
                       <div class="shadow-lg p-3 mb-5 bg-light rounded text-dark border border-alert" role="alert">
                           Clique na opção desejada abaixo para ver mais informações sobre os editais ou eventos em aberto e já encerrados.
                       </div>
-                      <div class="shadow-lg p-3 mb-5 bg-light rounded text-dark border border-info text-center" role="alert">
-                      <img src="<?php echo base_url('assets/img/icone-abaixo.png') ?>" width="30px">Processos Seletivos:
-                      </div>
-                      <div class="accordion card border border-info" id="accordionExample">
-                          <div class="card btn-sm">
-                            <div class="card-header p-3 mb-2 bg-light text-white border border-info" id="headingOne">
-                              <h5 class="mb-0">
-                                <center><button class="btn btn-link p-3 mb-2 bg-light text-dark" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                  <p class="text-justify">Tutores</p>
-                                </button></center>
-                              </h5>
-                            </div>
-                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                              <div class="card text-center">
-                                  <div class="card-header">
-                                    <ul class="nav nav-tabs card-header-tabs">
-                                      <li class="nav-item">
-                                        <a class="nav-link active" href="#">Em Aberto</a>
-                                      </li>
-                                      <li class="nav-item">
-                                        <a class="nav-link" href="#">Finalizados</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="card-body">
-                                    Teste de Texto aleátorio apenas para checar abas
-                                  </div>
-                              </div>
-                            </div>
+                      <div class="text-white border border-info text-center bg-secondary" role="alert">
+                      <img src="<?php echo base_url('assets/img/icone-abaixo.png') ?>" width="30px"><strong>Processos Seletivos:</strong>
+                      </div><br />
+                      <div class="text-dark text-center col-xs-12 container">
+                        <div class="row">
+                          <div class="col-sm-4 col-xs-12 shadow-lg p-3 mb-5 bg-light rounded text-dark border border-info">
+                            <img src="<?php echo base_url('assets/img/icone-universidade.png') ?>" width="30px"><a class="text-dark" href="#">Tutores</a>
                           </div>
-                          <div class="card btn-sm">
-                            <div class="card-header p-3 mb-2 bg-light border border-info text-dark" id="headingTwo">
-                              <h5 class="mb-0">
-                                <center><button class="btn btn-link collapsed p-3 mb-2 bg-light text-dark" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                  <p class="text-justify">Cursos de Especialização</p>
-                                </button></center>
-                              </h5>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                              <div class="card text-center">
-                                  <div class="card-header">
-                                    <ul class="nav nav-tabs card-header-tabs">
-                                      <li class="nav-item">
-                                        <a class="nav-link active" href="#">Em Aberto</a>
-                                      </li>
-                                      <li class="nav-item">
-                                        <a class="nav-link" href="#">Finalizados</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="card">
-                                    Teste de Texto aleátorio apenas para checar abas
-                                  </div>
-                              </div>
-                            </div>
+                          <div class="col-sm-4 col-xs-12 shadow-lg p-3 mb-5 bg-light rounded text-dark border border-info">
+                            <img src="<?php echo base_url('assets/img/icone-espec.png') ?>" width="30px"><a class="text-dark" href="#">Especialização</a>
                           </div>
-                          <div class="card btn-sm">
-                            <div class="card-header p-3 mb-2 bg-light border border-info text-dark" id="headingThree">
-                              <h5 class="mb-0">
-                                <center><button class="btn btn-link collapsed p-3 mb-2 bg-light text-dark" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                  <p class="text-justify">Eventos</p>
-                                </button></center>
-                              </h5>
-                            </div>
-                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                              <div class="card text-center">
-                                  <div class="card-header">
-                                    <ul class="nav nav-tabs card-header-tabs">
-                                      <li class="nav-item">
-                                        <a class="nav-link active" href="#">Em Aberto</a>
-                                      </li>
-                                      <li class="nav-item">
-                                        <a class="nav-link" href="#">Finalizados</a>
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div class="card-body">
-                                    <p>Teste de Texto aleátorio apenas para checar abas</p>
-                                  </div>
-                              </div>
-                            </div>
+                          <div class="col-sm-4 col-xs-12 shadow-lg p-3 mb-5 bg-light rounded text-dark border border-info">
+                            <img src="<?php echo base_url('assets/img/icone-calendario.png') ?>" width="30px"><a class="text-dark" href="#">Eventos</a>
                           </div>
                         </div>
                       </div>

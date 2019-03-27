@@ -31,7 +31,7 @@
                 </button>
             </div>
         </nav>
-        <div class="p-3 mb-2 bg-primary text-white row">.bg-success</div>
+        <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>
         <br /><br />
         <!--<center><h1><span class="badge badge-primary border border-success">Formulário para cadastro de novos usuários</span></h1><br /></center>-->
         <h1 class="text-dark text-center font-italic">Formulário para cadastro de novos usuários</h1><br />
@@ -293,7 +293,7 @@
             </div>
         </div>
         <br /><br /><br />
-        <footer class="container shadow-lg p-3 mb-5 border border-success bg-white rounded">
+        <footer class="container shadow-lg p-3 mb-5 border border-info bg-white rounded">
             <div class="footer p-3 mb-2 bg-light text-dark">
                 <center>
                     <div id="footbar">
