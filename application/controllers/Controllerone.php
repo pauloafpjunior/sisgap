@@ -102,6 +102,9 @@ class Controllerone extends CI_Controller {
 		$this->form_validation->set_rules ('ExpEAD', 'Experiência(s) Profissional na área de EAD');
 		$this->form_validation->set_rules ('ConhecInfo', 'Nível de Conhecimento em informática');
 		$this->form_validation->set_rules ('Curriculo', 'Currículo Lattes', 'valid_link');
+		$this->form_validation->set_rules ('AtuaTutor', 'Atuação Tutoria', 'required');
+		$this->form_validation->set_rules ('CursoTutor', 'CursoTutor');
+		$this->form_validation->set_rules ('PeriodoTutor', 'PeriodoTutor');
 		$this->form_validation->set_rules ('OutrasInfo', 'Outras informações adicionais');
 
 		$CPF = $this->input->post('CPF');
@@ -161,6 +164,8 @@ class Controllerone extends CI_Controller {
 					'ConhecInfo' => $this->input->post('ConhecInfo'),
 					'Curriculo' => $this->input->post('Curriculo'),
 					'AtuaTutor' => $this->input->post('AtuaTutor'),
+					'CursoTutor' => $this->input->post('CursoTutor'),
+					'PeriodoTutor' => $this->input->post('CursoTutor'),
 					'OutrasInfo' => $this->input->post('OutrasInfo'),
 				];
 				
@@ -197,6 +202,7 @@ class Controllerone extends CI_Controller {
 
 	//Funcoes para a alteração de senha
 	public function changePass(){
+		checkLogin();
 		$this->load->view('Front-end/Configs/DarkLightColors/sisgapEditPassword.php');
 	}
 

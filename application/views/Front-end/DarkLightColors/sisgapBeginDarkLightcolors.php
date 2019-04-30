@@ -14,7 +14,7 @@
   </head>
   <body class="p-3 mb-2 bg-light text-dark">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
+            <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/sisgap.png') ?>" height="20" width="83"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,7 +28,7 @@
                 </li>
                 </ul>
                 <button class="btn btn-default bg-dark text-white">
-                    <a href="<?php echo base_url('inicio') ?>" class="text-white"><strong>Acesso Administrativo</strong></a>
+                    <a href="<?php echo base_url('AdmBegin') ?>" class="text-white"><strong>Acesso Administrativo</strong></a>
                     <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/icone-admaccess.png') ?>" width="30px"></a>
                 </button>
             </div>

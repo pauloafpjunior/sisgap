@@ -30,7 +30,6 @@ class usuarios_model extends CI_Model {
         $this->db->where('CPF', $CPF);
         $this->db->where('RG', $RG);
         $query = $this->db->get('Usuarios');
-
         return ($query->num_rows() == 1) ? true : false;
     }
 
@@ -54,11 +53,10 @@ class usuarios_model extends CI_Model {
         $this->db->where('CPF', $CPF);
         $this->db->where('Senha', $Senha);
         $query = $this->db->get('Usuarios');
-
         return ($query->num_rows() == 1) ? true : false;
     }
 
-    //Atualização de informações
+    //Atualização de informações dos dados já cadastrados
     public function update($CPF, $altera)
     {
         $this->db->where('CPF', $CPF);
@@ -66,6 +64,7 @@ class usuarios_model extends CI_Model {
     }
 
     //Funcão para listar dados do Banco e retonar as informações referentes ao cpf
+    //Usada na função alterar meus dados (Leva todas as informações para a view de alteração)
     public function listData($CPF)
     {
         $this->db->where('CPF', $CPF);
@@ -93,6 +92,8 @@ class usuarios_model extends CI_Model {
             $infoConhecInfo = $row->ConhecInfo;
             $infoCurriculo = $row->Curriculo;
             $infoAtuaTutor = $row->AtuaTutor;
+            $infoCursoTutor = $row->CursoTutor;
+            $infoPeriodoTutor = $row->PeriodoTutor;
             $infoOutrasInfo = $row->OutrasInfo;
         }
         
@@ -118,11 +119,14 @@ class usuarios_model extends CI_Model {
                       'ConhecInfo' => $infoConhecInfo,
                       'Curriculo' => $infoCurriculo,
                       'AtuaTutor' => $infoAtuaTutor,
+                      'CursoTutor' => $infoCursoTutor,
+                      'PeriodoTutor' => $infoPeriodoTutor,
                       'OutrasInfo' => $infoOutrasInfo
                 ];
         return $data;
     }
 
+    //Função usada para checar se a conta do usuário esta ativada.
     public function checkStatus($CPF){
         $this->db->where('CPF', $CPF);
         $query = $this->db->get('Usuarios');
@@ -133,6 +137,7 @@ class usuarios_model extends CI_Model {
     }
 
     //Funcao para a validação da conta
+    //Atualizar o token apos a verificação por Email
     public function validToken($CPF, $Senha){
         $this->db->where('CPF', $CPF);
         $this->db->where('Senha', $Senha);

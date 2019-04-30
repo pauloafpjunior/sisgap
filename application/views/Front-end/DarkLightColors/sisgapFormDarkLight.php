@@ -12,7 +12,7 @@
   </head>
   <body class="p-3 mb-2 bg-light text-dark">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
+            <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/sisgap.png') ?>" height="20" width="83"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -259,11 +259,24 @@
                     <h2>Atuação <span class="badge badge-dark">como tutor na UFLA<img src="<?php echo base_url('assets/img/icone-universidade.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Já atuou ou atua como tutor na UFLA?</strong></p>
                     <div class="form-group col-md-13">
-                        <select class="form-control form-control-sm" value="<?php echo set_value('AtuaTutor') ?>" name="AtuaTutor">
+                        <select class="form-control form-control-sm" id="AtivaDiv" onchange="showDiv()" name="AtuaTutor">
                             <option selected>Selecionar...</option>
-                            <option value="0" >Sim</option> 
-                            <option value="1" >Não</option>
+                            <option value="1" >Sim</option> 
+                            <option value="0" >Não</option>
                         </select>
+                        <br />
+                        <div id="AtuouTutor" style="display:none">
+                            <div class="form-group col-md-13">
+                                <label for="AtuouTutor"><strong>Em qual curso?</strong></label>
+                                <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="Curso Tutor UFLA" value="<?php echo set_value('CursoTutor') ?>" name="CursoTutor">
+                                <?php echo form_error('') ?>
+                            </div>
+                            <div class="form-group col-md-13">
+                                <label for="inputPassword4"><strong>Quando? Perído.</strong></label>
+                                <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="Período Tutor UFLA" value="<?php echo set_value('PeriodoTutor') ?>" name="PeriodoTutor">
+                                <?php echo form_error('') ?>
+                            </div>
+                        </div>
                     </div>
                     <?php echo form_error('AtuaTutor') ?>
                     <h2>Informações <span class="badge badge-dark">Adicionais<img src="<?php echo base_url('assets/img/icone-info.png') ?>" width="30px"></span></h2><br />
@@ -330,5 +343,16 @@
             $("#telefone").mask("(00) 0000-0000");
         })
     </script>
+    <script type="text/javascript">
+        function showDiv(){
+        var x = document.getElementById('AtivaDiv').value;
+        if(x === "1"){
+            document.getElementById('AtuouTutor').style.display = "block";
+        } else {
+            document.getElementById('AtuouTutor').style.display = "none";
+        }
+    }
+    </script>
+}
   </body>
 </html>

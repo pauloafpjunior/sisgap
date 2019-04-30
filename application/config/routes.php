@@ -49,6 +49,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+//Parte do controlador "One"  ----------------Controlador Principal
 $route['default_controller'] = 'Controllerone';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -57,14 +59,22 @@ $route['formulario'] = 'Controllerone/formulario';
 $route['login'] = 'Controllerone/login';
 $route['validation'] = 'Controllerone/form_validate';
 $route['logged'] = 'Controllerone/logged';
-$route['change'] = 'Controllerchange/change';
-$route['update'] = 'Controllerupdate/update';
 $route['changePass'] = 'Controllerone/changePass';
 $route['newPass'] = 'Controllerone/newPass';
 $route['sendMail'] = 'Controllerone/sendMail';
 $route['validtoken'] = 'Controllerone/validToken';
 $route['updatetoken'] = 'Controllerone/updateToken';
 $route['quit'] = 'Controllerone/Quit';
+
+//Parte do controlador "Change" ---------------Controlador de Alteração de dados(usuario padrao)
+$route['change'] = 'Controllerchange/change';
+$route['update'] = 'Controllerupdate/update';
+
+
+//Parte do controlador "Adm"  -----------------Controlador da parte de adm sisgap
+$route['AdmBegin'] = 'ControllerAdm/AdmBegin';
+$route['CadDisciplina'] = 'ControllerAdm/CadDisciplina';
+
 
 $route['teste'] = 'ControllerTest/teste';
 

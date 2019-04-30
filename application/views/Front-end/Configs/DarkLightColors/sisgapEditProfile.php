@@ -15,7 +15,7 @@
   </head>
   <body>
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-p-3 mb-2 bg-dark text-white">
-          <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
+          <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/sisgap.png') ?>" height="20" width="83"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
           </button>
@@ -193,6 +193,16 @@
                         <?php echo form_dropdown('AtuaTutor', $dadosAtuaTutor, $AtuaT, 'class="form-control form-control-sm"') ?>
                     </div>
                     <?php echo form_error('AtuaTutor') ?>
+                    <div class="form-group col-md-13">
+                        <label for="AtuouTutor"><strong>Em qual curso?</strong></label>
+                        <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="Curso Tutor UFLA" value="<?php echo set_value('CursoTutor') ?>" name="CursoTutor">
+                        <?php echo form_error('CursoTutor') ?>
+                    </div>
+                    <div class="form-group col-md-13">
+                        <label for="inputPassword4"><strong>Quando? Perído.</strong></label>
+                        <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="Período Tutor UFLA" value="<?php echo set_value('PeriodoTutor') ?>" name="PeriodoTutor">
+                        <?php echo form_error('PeriodoTutor') ?>
+                    </div>
                     <h2>Informações <span class="badge badge-dark">Adicionais<img src="<?php echo base_url('assets/img/icone-info.png') ?>" width="30px"></span></h2><br />
                     <p><strong>Outras informações de Cadastro/Currículo</strong></p>
                     <div class="form-group col-md-13">

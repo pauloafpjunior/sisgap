@@ -13,7 +13,7 @@
   </head>
   <body class="p-3 mb-2 bg-light text-dark">
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-p-3 mb-2 bg-dark text-white">
-            <a href="<?php echo base_url('inicio') ?>"><img src="http://sisgap.dired.ufla.br/assets/img/sisgap.png" height="20" width="83"></a>
+            <a href="<?php echo base_url('inicio') ?>"><img src="<?php echo base_url('assets/img/sisgap.png') ?>" height="20" width="83"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -26,14 +26,8 @@
                         <a class="nav-link text-white" href="">CONTATOS</a>
                     </li>
                 </ul>
-                <button class="btn btn-default bg-dark text-white">
-                    <a href="<?php echo base_url('change') ?>" class="text-white"><strong>Alterar meu dados</strong></a>
-                    <a href="<?php echo base_url('change') ?>"><img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></a>
-                </button>
-                <button class="btn btn-default bg-dark text-white">
-                    <a href="<?php echo base_url('changePass') ?>" class="text-white"><strong>Alterar minha senha</strong></a>
-                    <a href="<?php echo base_url('changePass') ?>"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></a>
-                </button>
+                <a href="<?php echo base_url('change') ?>"><button class="btn btn-info bg-dark text-white" type="button" href="<?php echo base_url('change') ?>">Alterar meu Dados <img src="<?php echo base_url('assets/img/icone-trabalho.png') ?>" width="30px"></button></a>
+                <a href="<?php echo base_url('changePass') ?>"><button class="btn btn-info bg-dark text-white" type="button" href="<?php echo base_url('changePass') ?>">Alterar minha Senha <img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"></button></a>
                 <a href="<?php echo base_url('quit') ?>"><button class="btn btn-info" type="button" href="<?php echo base_url('inicio') ?>">Sair <img src="<?php echo base_url('assets/img/icone-canc.png') ?>" width="30px"></button></a>
             </div> 
         </nav>
