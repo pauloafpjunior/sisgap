@@ -74,6 +74,14 @@ $route['update'] = 'Controllerupdate/update';
 //Parte do controlador "Adm"  -----------------Controlador da parte de adm sisgap
 $route['AdmBegin'] = 'ControllerAdm/AdmBegin';
 $route['CadDisciplina'] = 'ControllerAdm/CadDisciplina';
+$route['CadCursos'] = 'ControllerAdm/CadCursos';
+$route['ListDisciplina'] = 'ControllerAdm/ListDisciplina';
+$route['ListCursos'] = 'ControllerAdm/ListCursos';
+$route['validDisciplina'] = 'ControllerAdm/validDisciplina';
+$route['validCurso'] = 'ControllerAdm/validCurso';
+
+
+
 
 
 $route['teste'] = 'ControllerTest/teste';

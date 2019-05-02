@@ -31,25 +31,23 @@
         </nav>
         <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>
         <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
-        <br/>
-            <div class="card bg-light mb-3 border border-info" style="max-width: 22rem;">
-                <div class="card-header text-dark"><strong>Ferramentas:</strong></div>
-                    <div class="card-body">
-                        <h5 class="card-title"><img src="<?php echo base_url('assets/img/icone-menu.png') ?>" width="30px" ><strong class="text-primary">  MENU:</strong> </h5>
-                        <div class="text-white text-left col-xs-12">
-                                <div class="p-3 mb-2 bg-light">
-                                    <img src="<?php echo base_url('assets/img/icone-disciplina.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('CadDisciplina') ?>"> Cadastrar Disciplinas</a>
-                                </div>
-                                <div class="p-3 mb-2 bg-light text-white">
-                                    <img src="<?php echo base_url('assets/img/icone-listDisci.png') ?>" width="30px"><a class="text-dark" href="#"> Listar disciplinas cadastradas</a>
-                                </div>
-                                <div class="p-3 mb-2 bg-light text-white">
-                                    <img src="<?php echo base_url('assets/img/icone-curso.png') ?>" width="30px"><a class="text-dark" href="#"> Cadastrar Cursos</a>
-                                </div>
-                                <div class="p-3 mb-2 bg-light text-white">
-                                    <img src="<?php echo base_url('assets/img/icone-listCorse.png') ?>" width="30px"><a class="text-dark" href="#"> Listar Cursos cadastrados</a>
-                                </div>
-                        </div>
+        <br/><br/>
+            <div class="card bg-light mb-3 border border-info" style="max-width: 30rem; height: 35rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><img src="<?php echo base_url('assets/img/icone-menu.png') ?>" width="30px" ><strong class="text-primary">  MENU:</strong> </h5>
+                    <div class="text-white text-left col-xs-12">
+                            <div class="p-3 mb-2 bg-light">
+                                <img src="<?php echo base_url('assets/img/icone-disciplina.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('CadDisciplina') ?>"> Cadastrar Disciplinas</a>
+                            </div>
+                            <div class="p-3 mb-2 bg-light text-white">
+                                <img src="<?php echo base_url('assets/img/icone-listDisci.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('ListDisciplina') ?>"> Listar disciplinas cadastradas</a>
+                            </div>
+                            <div class="p-3 mb-2 bg-light text-white">
+                                <img src="<?php echo base_url('assets/img/icone-curso.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('CadCursos') ?>"> Cadastrar Cursos</a>
+                            </div>
+                            <div class="p-3 mb-2 bg-light text-white">
+                                <img src="<?php echo base_url('assets/img/icone-listCorse.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('ListCursos') ?>"> Listar Cursos cadastrados</a>
+                            </div>
                     </div>
                 </div>
             </div>

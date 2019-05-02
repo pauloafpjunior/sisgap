@@ -39,10 +39,10 @@
                         <h5 class="card-title"><img src="<?php echo base_url('assets/img/icone-menu.png') ?>" width="30px" ><strong class="text-primary">  MENU:</strong> </h5>
                         <div class="text-white text-left col-xs-12">
                             <div class="p-3 mb-2 bg-light">
-                                <img src="<?php echo base_url('assets/img/icone-disciplina.png') ?>" width="30px"><a class="text-danger" href="<?php echo base_url('CadDisciplina') ?>"> Cadastrar Disciplinas</a>
+                                <img src="<?php echo base_url('assets/img/icone-disciplina.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('CadDisciplina') ?>"> Cadastrar Disciplinas</a>
                             </div>
                             <div class="p-3 mb-2 bg-light text-white">
-                                <img src="<?php echo base_url('assets/img/icone-listDisci.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('ListDisciplina') ?>"> Listar disciplinas cadastradas</a>
+                                <img src="<?php echo base_url('assets/img/icone-listDisci.png') ?>" width="30px"><a class="text-danger" href="<?php echo base_url('ListDisciplina') ?>"> Listar disciplinas cadastradas</a>
                             </div>
                             <div class="p-3 mb-2 bg-light text-white">
                                 <img src="<?php echo base_url('assets/img/icone-curso.png') ?>" width="30px"><a class="text-dark" href="<?php echo base_url('CadCursos') ?>"> Cadastrar Cursos</a>
@@ -58,46 +58,30 @@
                 </div>
             </div>
             <div class="col-6">
-            <h4 class="text-center"><strong>Cadastro de Disciplinas</strong></h4><br/>
-            <?php echo form_open('validDisciplina'); ?>
-                <div action="post">
-                    <div class="form-group row">
-                        <label class=""><strong>Curso</strong></label>
-                        <select id="inputState" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
-                            <option selected>Nenhum curso selecionado...</option>
-                            <option value="ac">Teste1</option> 
-                            <option value="al">Teste2</option> 
-                        </select>
-                    </div>
-                    <div class="form-group row">
-                        <label class=""><strong>Nome Completo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Nome Completo" value="<?php echo set_value('Nome') ?>" name="Nome">
-                        <?php echo form_error('Nome') ?>
-                    </div>
-                    <div class="form-group row">
-                        <label class=""><strong>Codigo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Codigo" value="<?php echo set_value('Codigo') ?>" name="Codigo">
-                        <?php echo form_error('Codigo') ?>
-                    </div>
-                    <div class="form-group row">
-                        <label class=""><strong>Modulo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Modulo" value="<?php echo set_value('Modulo') ?>" name="Modulo">
-                        <?php echo form_error('Modulo') ?>
-                    </div>
-                    <div class="form-group row">
-                        <label class=""><strong>Carga Horária</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Carga Horária" value="<?php echo set_value('CargaHoraria') ?>" name="CargaHoraria">
-                        <?php echo form_error('CargaHoraria') ?>
-                    </div>
-                    <div class="form-group row">
-                        <label class=""><strong>Quantidade de Créditos</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Quantidade de Créditos" value="<?php echo set_value('QuantCreditos') ?>" name="QuantCreditos'">
-                        <?php echo form_error('QuantCreditos') ?>
-                    </div>
-                    <br />
-                    <center><button type="submit" class="btn btn-primary">Cadastrar</button><center>
-                </div> 
-            </div>      
+            <h4 class="text-center"><strong>Disciplinas Cadastradas</strong></h4><br/>
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nome do Curso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        </tr>
+                        <tr>
+                        <th scope="row">3</th>
+                        <td>Larry</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>       
         </div>
 
     <!--By FaBiUsKcomp-->

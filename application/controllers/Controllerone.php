@@ -119,9 +119,7 @@ class Controllerone extends CI_Controller {
         {
 			$erros = array('erro' => validation_errors()); 
 			$this->load->view('Front-end/DarkLightColors/sisgapFormDarkLight.php', $erros); 
-        } 
-        else 
-        {
+        } else {
 			//Parte de verificação se o CPF e RG já se encontram cadastrados no sistema
 			$this->load->model('usuarios_model');
 
