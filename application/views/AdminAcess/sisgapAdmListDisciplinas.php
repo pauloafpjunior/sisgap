@@ -59,28 +59,32 @@
             </div>
             <div class="col-6">
             <h4 class="text-center"><strong>Disciplinas Cadastradas</strong></h4><br/>
-                <table class="table">
-                    <thead>
+            <table class="table">
+                <thead>
                         <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nome do Curso</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Código</th>
+                        <th scope="col">Módulo</th>
+                        <th scope="col">Carga Horária</th>
+                        <th scope="col">Créditos</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <!--<?php //foreach ($Disciplinas->result() as $disciplina): ?>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
+                            <th scope="row"><?php //echo $disciplina->Id; ?></th>
+                            <td><?php //echo $disciplina->Nome; ?> </td>
+                            <td><?php //echo $disciplina->Codigo; ?> </td>
+                            <td><?php //echo $disciplina->Modulo; ?> </td>
+                            <td><?php //echo $disciplina->CargaHoraria; ?> </td>
+                            <td><?php //echo $disciplina->QtdCredito; ?> </td>
+                            <td><?php //echo $disciplina->IdCurso; ?> </td>
                         </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        </tr>
+                    <?php //endforeach; ?>-->
                     </tbody>
                 </table>
+                <h2>Já implementada e funcionando, basta resolver o bug que citei</h2>
             </div>       
         </div>
 

@@ -30,7 +30,6 @@
             </div> 
         </nav>
         <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>
-        <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
         <br/><br/>
         <div class="row">
             <div class="col-5">
@@ -58,31 +57,21 @@
                 </div>
             </div>
             <div class="col-6">
-            <h4 class="text-center"><strong>Disciplinas Cadastradas</strong></h4><br/>
-            <table class="table">
-                <thead>
+            <h4 class="text-center"><strong>Cursos Cadastrados</strong></h4><br/>
+                <table class="table">
+                    <thead>
                         <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Disciplina</th>
-                        <th scope="col">Código</th>
-                        <th scope="col">Módulo</th>
-                        <th scope="col">Carga Horária</th>
-                        <th scope="col">Créditos</th>
+                        <th scope="col">Nome do Curso</th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php foreach ($Cursos->result() as $curso): ?>
                         <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
+                            <th scope="row"><?php echo $curso->Id; ?></th>
+                            <td><?php echo $curso->Nome; ?> </td>
                         </tr>
-                        <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        </tr>
-                        <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        </tr>
+                    <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>       

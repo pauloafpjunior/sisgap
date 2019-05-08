@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 29/04/2019 às 21:22
+-- Tempo de geração: 08/05/2019 às 20:47
 -- Versão do servidor: 5.7.26-0ubuntu0.18.04.1
 -- Versão do PHP: 7.2.17-0ubuntu0.18.04.1
 
@@ -32,6 +32,17 @@ CREATE TABLE `Cursos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Fazendo dump de dados para tabela `Cursos`
+--
+
+INSERT INTO `Cursos` (`Id`, `Nome`) VALUES
+(7, 'Química'),
+(8, 'Física'),
+(9, 'Matemática'),
+(13, 'Computação'),
+(14, 'Banco de Dados');
+
+--
 -- Índices de tabelas apagadas
 --
 
@@ -49,7 +60,7 @@ ALTER TABLE `Cursos`
 -- AUTO_INCREMENT de tabela `Cursos`
 --
 ALTER TABLE `Cursos`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -30,7 +30,6 @@
             </div> 
         </nav>
         <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>
-        <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
         <br/><br/>
         <div class="row">
             <div class="col-5">
@@ -63,12 +62,14 @@
                 <div action="post">
                     <div class="form-group row">
                         <label class=""><strong>Curso</strong></label>
-                        <select id="inputState" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
-                            <option selected>Nenhum curso selecionado...</option>
-                            <option value="ac">Teste1</option> 
-                            <option value="al">Teste2</option> 
+                        <select id="inputState" class="form-control form-control-sm" value="<?php echo set_value('Curso') ?>" name="Curso">
+                        <option selected>Nenhum curso selecionado...</option>
+                            <?php foreach($Cursos-> result() as $Curso): ?> 
+                                <option value="<?php echo $Curso->Id; ?>"><?php echo $Curso->Nome; ?></option>
+                            <?php endforeach; ?> 
                         </select>
                     </div>
+                    <?php echo form_error('Curso') ?>
                     <div class="form-group row">
                         <label class=""><strong>Nome Completo</strong></label>
                         <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Nome Completo" value="<?php echo set_value('Nome') ?>" name="Nome">
@@ -91,11 +92,13 @@
                     </div>
                     <div class="form-group row">
                         <label class=""><strong>Quantidade de Créditos</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Quantidade de Créditos" value="<?php echo set_value('QuantCreditos') ?>" name="QuantCreditos'">
-                        <?php echo form_error('QuantCreditos') ?>
+                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Quantidade de Créditos" value="<?php echo set_value('QtdtCredito') ?>" name="QtdCredito">
+                        <?php echo form_error('QtdCredito') ?>
                     </div>
                     <br />
                     <center><button type="submit" class="btn btn-primary">Cadastrar</button><center>
+                    <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
+                    <center><h3><small class="text-danger"><?php echo $this->session->flashdata("naoalterados") ?></small></h3></center>
                 </div> 
             </div>      
         </div>

@@ -31,6 +31,7 @@
         </nav>
         <div class="p-3 mb-2 bg-info text-white row">.bg-success</div>
         <center><h3><small class="text-success"><?php echo $this->session->flashdata("alterados") ?></small></h3></center>
+        <center><h3><small class="text-danger"><?php echo $this->session->flashdata("naoalterados") ?></small></h3></center>
         <br/><br/>
             <div class="card bg-light mb-3 border border-info" style="max-width: 30rem; height: 35rem;">
                 <div class="card-body">

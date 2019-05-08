@@ -19,4 +19,9 @@ class cursos_model extends CI_Model {
         $query = $this->db->get('Cursos');
         return ($query->num_rows() == 1) ? true : false;
     }
+
+    //Função responsável por renderizar os cursos na view de listarCursos
+    public function listarSalvos(){
+        return $query = $this->db->get( 'Cursos' );
+    }
 }
