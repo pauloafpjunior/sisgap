@@ -75,7 +75,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label><strong>Senha</strong></label>
-                            <input type="password" class="form-control form-control-sm" id="inputAddress" onpaste="return false" placeholder="Senha" name="Senha">
+                            <input type="password" class="form-control form-control-sm" id="" onpaste="return false" placeholder="Senha" name="Senha">
                             <small><p class="font-italic">As senhas tem que ter no mínimo 6 caracteres</p></small>
                             <?php echo form_error('Senha') ?>
                         </div>
@@ -116,7 +116,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-7">
                             <label for="inputEmail4"><strong>Estado</strong></label>
-                            <select id="inputState" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
+                            <select id="estado" class="form-control form-control-sm" name="Estado" value="<?php echo set_value('Estado') ?>" name="Estado">
                                 <option selected>Selecionar...</option>
                                 <option value="ac">Acre</option> 
                                 <option value="al">Alagoas</option> 
@@ -150,7 +150,7 @@
                         </div>
                         <div class="form-group col-md-5">
                             <label for="inputPassword4"><strong>Pais</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="País" value="<?php echo set_value('Pais') ?>" name="Pais">
+                            <input type="text" class="form-control form-control-sm" id="Pais" placeholder="País" value="<?php echo set_value('Pais') ?>" name="Pais">
                             <?php echo form_error('Pais') ?>
                         </div>
                     </div>
@@ -171,12 +171,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputAddress"><strong>E-mail</strong></label>
-                            <input type="email" class="form-control form-control-sm" id="inputAddress" placeholder="seu@email.com" value="<?php echo set_value('Email') ?>" name="Email">
+                            <input type="email" class="form-control form-control-sm" id="" placeholder="seu@email.com" value="<?php echo set_value('Email') ?>" name="Email">
                             <?php echo form_error('Email') ?>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4"><strong>Confirmar E-mail</strong></label>
-                            <input type="email" class="form-control form-control-sm" id="inputPassword4" placeholder="seu@email.com" value="<?php echo set_value('ConfEmail') ?>" name="ConfEmail">
+                            <input type="email" class="form-control form-control-sm" id="" placeholder="seu@email.com" value="<?php echo set_value('ConfEmail') ?>" name="ConfEmail">
                             <?php echo form_error('ConfEmail') ?>
                         </div>
                     </div><br />
@@ -184,13 +184,13 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputEmail4"><strong>Graduação</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Graduado em..." value="<?php echo set_value('Graduacao') ?>" name="Graduacao">
+                            <input type="text" class="form-control form-control-sm" id="" placeholder="Graduado em..." value="<?php echo set_value('Graduacao') ?>" name="Graduacao">
                             <small><p class="font-italic">Escreva o nome do curso</p></small>
                             <?php echo form_error('Graduacao') ?>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputEmail4"><strong>Pós-Graduação</strong></label>
-                            <select id="inputState" class="form-control form-control-sm" value="<?php echo set_value('PosGraduacao') ?>" name="PosGraduacao">
+                            <select id="" class="form-control form-control-sm" value="<?php echo set_value('PosGraduacao') ?>" name="PosGraduacao">
                                 <option selected>Selecionar...</option>
                                 <option value="0" >Não possui pós-graduação</option> 
                                 <option value="1" >Pós-Graduação lato sensu (especialização em andamento)</option>
@@ -268,12 +268,12 @@
                         <div id="AtuouTutor" style="display:none">
                             <div class="form-group col-md-13">
                                 <label for="AtuouTutor"><strong>Em qual curso?</strong></label>
-                                <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="Curso Tutor UFLA" value="<?php echo set_value('CursoTutor') ?>" name="CursoTutor">
+                                <input type="text" class="form-control form-control-sm" id="" placeholder="Curso Tutor UFLA" value="<?php echo set_value('CursoTutor') ?>" name="CursoTutor">
                                 <?php echo form_error('') ?>
                             </div>
                             <div class="form-group col-md-13">
                                 <label for="inputPassword4"><strong>Quando? Perído.</strong></label>
-                                <input type="text" class="form-control form-control-sm" id="inputPassword4" placeholder="Período Tutor UFLA" value="<?php echo set_value('PeriodoTutor') ?>" name="PeriodoTutor">
+                                <input type="text" class="form-control form-control-sm" id="" placeholder="Período Tutor UFLA" value="<?php echo set_value('PeriodoTutor') ?>" name="PeriodoTutor">
                                 <?php echo form_error('') ?>
                             </div>
                         </div>

@@ -62,7 +62,7 @@
                 <div action="post">
                     <div class="form-group row">
                             <label class=""><strong>Nome do Curso</strong></label>
-                            <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Nome do Curso" value="<?php echo set_value('Nome') ?>" name="Nome">
+                            <input type="text" class="form-control form-control-sm" id="" placeholder="Nome do Curso" value="<?php echo set_value('Nome') ?>" name="Nome">
                             <?php echo form_error('Nome') ?>
                         </div>
                         <br />

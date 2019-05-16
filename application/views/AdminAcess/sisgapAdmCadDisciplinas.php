@@ -72,27 +72,27 @@
                     <?php echo form_error('Curso') ?>
                     <div class="form-group row">
                         <label class=""><strong>Nome Completo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Nome Completo" value="<?php echo set_value('Nome') ?>" name="Nome">
+                        <input type="text" class="form-control form-control-sm" id="" placeholder="Nome Completo" value="<?php echo set_value('Nome') ?>" name="Nome">
                         <?php echo form_error('Nome') ?>
                     </div>
                     <div class="form-group row">
                         <label class=""><strong>Codigo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Codigo" value="<?php echo set_value('Codigo') ?>" name="Codigo">
+                        <input type="text" class="form-control form-control-sm" id="" placeholder="Codigo" value="<?php echo set_value('Codigo') ?>" name="Codigo">
                         <?php echo form_error('Codigo') ?>
                     </div>
                     <div class="form-group row">
                         <label class=""><strong>Modulo</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Modulo" value="<?php echo set_value('Modulo') ?>" name="Modulo">
+                        <input type="text" class="form-control form-control-sm" id="" placeholder="Modulo" value="<?php echo set_value('Modulo') ?>" name="Modulo">
                         <?php echo form_error('Modulo') ?>
                     </div>
                     <div class="form-group row">
                         <label class=""><strong>Carga Horária</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Carga Horária" value="<?php echo set_value('CargaHoraria') ?>" name="CargaHoraria">
+                        <input type="text" class="form-control form-control-sm" id="" placeholder="Carga Horária" value="<?php echo set_value('CargaHoraria') ?>" name="CargaHoraria">
                         <?php echo form_error('CargaHoraria') ?>
                     </div>
                     <div class="form-group row">
                         <label class=""><strong>Quantidade de Créditos</strong></label>
-                        <input type="text" class="form-control form-control-sm" id="inputEmail4" placeholder="Quantidade de Créditos" value="<?php echo set_value('QtdtCredito') ?>" name="QtdCredito">
+                        <input type="text" class="form-control form-control-sm" id="" placeholder="Quantidade de Créditos" value="<?php echo set_value('QtdtCredito') ?>" name="QtdCredito">
                         <?php echo form_error('QtdCredito') ?>
                     </div>
                     <br />

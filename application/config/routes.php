@@ -50,35 +50,35 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 
-//Parte do controlador "One"  ----------------Controlador Principal
-$route['default_controller'] = 'Controllerone';
+//Parte do controlador "Main"  ----------------Controlador Principal
+$route['default_controller'] = 'Main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['inicio'] = 'Controllerone/inicio';
-$route['formulario'] = 'Controllerone/formulario';
-$route['login'] = 'Controllerone/login';
-$route['validation'] = 'Controllerone/form_validate';
-$route['logged'] = 'Controllerone/logged';
-$route['changePass'] = 'Controllerone/changePass';
-$route['newPass'] = 'Controllerone/newPass';
-$route['sendMail'] = 'Controllerone/sendMail';
-$route['validtoken'] = 'Controllerone/validToken';
-$route['updatetoken'] = 'Controllerone/updateToken';
-$route['quit'] = 'Controllerone/Quit';
+$route['inicio'] = 'Main/inicio';
+$route['formulario'] = 'Main/formulario';
+$route['login'] = 'Main/login';
+$route['validation'] = 'Main/form_validate';
+$route['logged'] = 'Main/logged';
+$route['changePass'] = 'Main/changePass';
+$route['newPass'] = 'Main/newPass';
+$route['sendMail'] = 'Main/sendMail';
+$route['validtoken'] = 'Main/validToken';
+$route['updatetoken'] = 'Main/updateToken';
+$route['quit'] = 'Main/Quit';
 
-//Parte do controlador "Change" ---------------Controlador de Alteração de dados(usuario padrao)
-$route['change'] = 'Controllerchange/change';
-$route['update'] = 'Controllerupdate/update';
+//Parte do controlador "User_change" ---------------Controlador de Alteração de dados(usuario padrao)
+$route['change'] = 'User_change/change';
+$route['update'] = 'User_update/update';
 
 
-//Parte do controlador "Adm"  -----------------Controlador da parte de adm sisgap
-$route['AdmBegin'] = 'ControllerAdm/AdmBegin';
-$route['CadDisciplina'] = 'ControllerAdm/CadDisciplina';
-$route['CadCursos'] = 'ControllerAdm/CadCursos';
-$route['ListDisciplina'] = 'ControllerAdm/ListDisciplina';
-$route['ListCursos'] = 'ControllerAdm/ListCursos';
-$route['validDisciplina'] = 'ControllerAdm/validDisciplina';
-$route['validCurso'] = 'ControllerAdm/validCurso';
+//Parte dos controladores "Adm_course e Adm_subject"  -----------------Controlador da parte de administração do sisgap
+$route['AdmBegin'] = 'Adm_course/AdmBegin';
+$route['CadDisciplina'] = 'Adm_subject/CadDisciplina';
+$route['CadCursos'] = 'Adm_course/CadCursos';
+$route['ListDisciplina'] = 'Adm_subject/ListDisciplina';
+$route['ListCursos'] = 'Adm_course/ListCursos';
+$route['validDisciplina'] = 'Adm_subject/validDisciplina';
+$route['validCurso'] = 'Adm_course/validCurso';
 
 
 

@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputPassword1"><p class="text-dark"><img src="<?php echo base_url('assets/img/icone-senha.png') ?>" width="30px"><strong>Senha</strong></p></label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="Senha">
+                                    <input type="password" class="form-control" id="" placeholder="Senha" name="Senha">
                                     <br/><?php echo form_error('Senha') ?>
                                     <h4 class=""><small class=""><?php echo $this->session->flashdata("error") ?></small></h4>
                                 </div>
